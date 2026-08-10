@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Court Date Finder</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --success: #22c55e;
+      --success-bg: rgba(34, 197, 94, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 20px 16px 48px;
+      line-height: 1.5;
+    }
+
+    .container { max-width: 440px; margin: 0 auto; }
+
+    header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    header p { color: var(--muted); font-size: 0.88rem; }
+
+    .today {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 16px;
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      font-size: 1.02rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #0f172a;
+      color: var(--text);
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      cursor: pointer;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);
+    }
+
+    select:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .result { display: none; }
+    .result.show { display: block; }
+
+    .result-main {
+      text-align: center;
+      padding: 6px 0 2px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--success-bg);
+      color: var(--success);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    .result-date {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--success);
+      letter-spacing: -0.02em;
+      margin-bottom: 2px;
+    }
+
+    .result-time {
+      font-size: 1.12rem;
+      margin-bottom: 14px;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 18px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-bottom: 4px;
+    }
+
+    .copy-btn:hover { background: var(--accent-hover); }
+    .copy-btn.copied {
+      background: var(--success);
+    }
+
+    .result-meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 13px;
+      margin-top: 14px;
+    }
+
+    .result-meta div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .result-meta div:last-child { margin-bottom: 0; }
+
+    .schedule-rules {
+      margin-top: 10px;
+      padding-top: 8px;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .schedule-rules .label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .schedule-rules .rule {
+      padding: 2px 0;
+      color: #e2e8f0;
+      font-size: 0.9rem;
+    }
+    .source-note {
+      font-size: 0.78rem;
+      color: #64748b;
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.4;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 18px;
+      line-height: 1.45;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 26px;
+      font-size: 0.73rem;
+      color: #64748b;
+    }
+
+    .error {
+      background: #450a0a;
+      border: 1px solid #7f1d1d;
+      color: #fca5a5;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Court Date Finder</h1>
+      <p>Next court date ≥ 30 days out</p>
+    </header>
+
+    <div class="today" id="todayLabel"></div>
+    <div class="error" id="errorBox"></div>
+
+    <div class="card">
+      <label for="courtSelect">Court / Town</label>
+      <select id="courtSelect" disabled>
+        <option value="">— Select a station first —</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <label for="stationSelect">Station</label>
+      <select id="stationSelect">
+        <option value="">— Loading stations —</option>
+      </select>
+    </div>
+
+    <div class="card result" id="resultCard">
+      <div class="result-main">
+        <div class="badge">≥ 30 DAYS OUT</div>
+        <div class="result-date" id="resultDate">—</div>
+        <div class="result-time" id="resultTime">—</div>
+        <button class="copy-btn" id="copyBtn" type="button">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+          </svg>
+          <span id="copyLabel">Copy Date & Time</span>
+        </button>
+      </div>
+      <div class="result-meta">
+        <div><span>Court</span><span id="resultCourt">—</span></div>
+        <div><span>Minimum date</span><span id="resultMinDate">—</span></div>
+        <div><span>Days from today</span><span id="resultDays">—</span></div>
+        <div class="schedule-rules" id="scheduleRules"></div>
+      </div>
+      <div class="source-note" id="metaNote"></div>
+    </div>
+
+    <p class="note">
+      Schedules are stored in plain English in <code>schedules.json</code> so anyone can open and verify them.
+    </p>
+
+    <footer id="footerMeta">Local tool</footer>
+  </div>
+
+  <script>
+    let DATA = null;
+    let currentCopyText = "";
+
+    const WEEKDAY_MAP = {
+      "sunday": 0, "monday": 1, "tuesday": 2, "wednesday": 3,
+      "thursday": 4, "friday": 5, "saturday": 6
+    };
+    const ORDINAL_MAP = { "1st": 1, "2nd": 2, "3rd": 3, "4th": 4, "5th": 5 };
+
+    function startOfDay(d) {
+      const x = new Date(d);
+      x.setHours(0, 0, 0, 0);
+      return x;
+    }
+    function addDays(d, n) {
+      const x = new Date(d);
+      x.setDate(x.getDate() + n);
+      return x;
+    }
+    function formatDate(d) {
+      return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+    }
+    function formatMMDDYYYY(d) {
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      return mm + "/" + dd + "/" + d.getFullYear();
+    }
+    function formatShort(d) {
+      return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+    }
+
+    // Parse plain English like "1st and 3rd Monday" or "Every Tuesday"
+    function parseWhen(whenStr) {
+      const s = whenStr.toLowerCase().trim();
+      let weekday = null;
+      for (const [name, num] of Object.entries(WEEKDAY_MAP)) {
+        if (s.includes(name)) { weekday = num; break; }
+      }
+      if (weekday === null) return null;
+
+      if (s.startsWith("every")) {
+        return { type: "weekly", weekday };
+      }
+
+      const ordinals = [];
+      for (const [word, num] of Object.entries(ORDINAL_MAP)) {
+        if (s.includes(word)) ordinals.push(num);
+      }
+      ordinals.sort((a, b) => a - b);
+      if (ordinals.length === 0) return null;
+      return { type: "nth", weekday, ordinals };
+    }
+
+    function getNthWeekday(year, month, weekday, ordinal) {
+      const first = new Date(year, month, 1);
+      const firstWeekday = first.getDay();
+      let day = 1 + ((weekday - firstWeekday + 7) % 7);
+      day += (ordinal - 1) * 7;
+      const result = new Date(year, month, day);
+      if (result.getMonth() !== month) return null;
+      return result;
+    }
+
+    function candidatesFromMeet(meet, fromDate, monthsAhead = 10) {
+      const rule = parseWhen(meet.when);
+      if (!rule) return [];
+      const candidates = [];
+      let year = fromDate.getFullYear();
+      let month = fromDate.getMonth();
+
+      for (let m = 0; m < monthsAhead; m++) {
+        const y = year + Math.floor((month + m) / 12);
+        const mo = (month + m) % 12;
+
+        if (rule.type === "nth") {
+          for (const ord of rule.ordinals) {
+            const d = getNthWeekday(y, mo, rule.weekday, ord);
+            if (d) candidates.push({ date: d, time: meet.time });
+          }
+        } else if (rule.type === "weekly") {
+          const first = getNthWeekday(y, mo, rule.weekday, 1);
+          if (first) {
+            let d = new Date(first);
+            while (d.getMonth() === mo) {
+              candidates.push({ date: new Date(d), time: meet.time });
+              d.setDate(d.getDate() + 7);
+            }
+          }
+        }
+      }
+      return candidates;
+    }
+
+    function findNextCourtDate(court) {
+      const today = startOfDay(new Date());
+      const minDate = addDays(today, 30);
+      let all = [];
+      for (const meet of court.meets) {
+        all = all.concat(candidatesFromMeet(meet, today));
+      }
+      all.sort((a, b) => a.date - b.date);
+      for (const item of all) {
+        if (item.date >= minDate) {
+          return {
+            date: item.date,
+            time: item.time,
+            name: court.name,
+            minDate,
+            daysFromToday: Math.round((item.date - today) / (1000 * 60 * 60 * 24)),
+            meets: court.meets
+          };
+        }
+      }
+      return null;
+    }
+
+    // ========== UI ==========
+    const stationSelect = document.getElementById("stationSelect");
+    const courtSelect = document.getElementById("courtSelect");
+    const resultCard = document.getElementById("resultCard");
+    const copyBtn = document.getElementById("copyBtn");
+    const copyLabel = document.getElementById("copyLabel");
+
+    document.getElementById("todayLabel").textContent = "Today: " + formatDate(new Date());
+
+    function populateStations() {
+      stationSelect.innerHTML = '<option value="">— Choose a station —</option>';
+      DATA.stations.forEach((s, i) => {
+        const opt = document.createElement("option");
+        opt.value = i;
+        opt.textContent = s.name;
+        stationSelect.appendChild(opt);
+      });
+    }
+
+    function populateCourts(stationIndex) {
+      courtSelect.innerHTML = "";
+      resultCard.classList.remove("show");
+      if (stationIndex === "" || stationIndex === null) {
+        courtSelect.disabled = true;
+        courtSelect.innerHTML = '<option value="">— Select a station first —</option>';
+        return;
+      }
+      const station = DATA.stations[stationIndex];
+      courtSelect.disabled = false;
+      const placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.textContent = "— Choose a court —";
+      courtSelect.appendChild(placeholder);
+      station.courts.forEach((c, i) => {
+        const opt = document.createElement("option");
+        opt.value = i;
+        opt.textContent = c.name;
+        courtSelect.appendChild(opt);
+      });
+    }
+
+    function showResult(court) {
+      const result = findNextCourtDate(court);
+      if (!result) {
+        resultCard.classList.remove("show");
+        return;
+      }
+
+      document.getElementById("resultDate").textContent = formatDate(result.date);
+      document.getElementById("resultTime").textContent = result.time;
+      document.getElementById("resultCourt").textContent = result.name;
+      document.getElementById("resultMinDate").textContent = formatShort(result.minDate);
+      document.getElementById("resultDays").textContent = result.daysFromToday + " days";
+
+      // Simple schedule display
+      const rulesBox = document.getElementById("scheduleRules");
+      let lines = result.meets.map(m => m.when + " @ " + m.time);
+      if (court.notes) lines.push(court.notes);
+      rulesBox.innerHTML = "<div class=\"label\">Court Schedule</div>" +
+        lines.map(l => "<div class=\"rule\">" + l + "</div>").join("");
+
+      currentCopyText = formatMMDDYYYY(result.date) + " " + result.time;
+      autoCopy(currentCopyText);
+      resultCard.classList.add("show");
+    }
+
+    async function autoCopy(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        copyLabel.textContent = "Copied!";
+        copyBtn.classList.add("copied");
+        setTimeout(() => {
+          copyLabel.textContent = "Copy Date & Time";
+          copyBtn.classList.remove("copied");
+        }, 1800);
+      } catch (e) {
+        try {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          copyLabel.textContent = "Copied!";
+          copyBtn.classList.add("copied");
+          setTimeout(() => {
+            copyLabel.textContent = "Copy Date & Time";
+            copyBtn.classList.remove("copied");
+          }, 1800);
+        } catch (e2) {}
+      }
+    }
+
+    function handleCourtSelection() {
+      const si = stationSelect.value;
+      const ci = courtSelect.value;
+      if (si === "" || ci === "") {
+        resultCard.classList.remove("show");
+        return;
+      }
+      const court = DATA.stations[si].courts[ci];
+      if (court) showResult(court);
+    }
+
+    stationSelect.addEventListener("change", () => {
+      populateCourts(stationSelect.value);
+    });
+
+    courtSelect.addEventListener("change", handleCourtSelection);
+
+    let prevCourt = "";
+    courtSelect.addEventListener("focus", () => { prevCourt = courtSelect.value; });
+    courtSelect.addEventListener("blur", () => {
+      if (courtSelect.value && courtSelect.value === prevCourt) handleCourtSelection();
+    });
+
+    copyBtn.addEventListener("click", () => {
+      if (currentCopyText) autoCopy(currentCopyText);
+    });
+
+    async function loadData() {
+      try {
+        const res = await fetch("schedules.json?t=" + Date.now());
+        if (!res.ok) throw new Error("fail");
+        DATA = await res.json();
+      } catch (e) {
+        console.warn("Using embedded data");
+        DATA = EMBEDDED_DATA;
+      }
+      if (DATA && DATA.stations) {
+        populateStations();
+        const about = DATA.about || {};
+        document.getElementById("footerMeta").textContent =
+          "Updated: " + (about.lastUpdated || "—") + "  •  " + (about.source || "");
+        document.getElementById("metaNote").textContent = about.howToRead || "";
+      }
+    }
+
+    const EMBEDDED_DATA = {"about": {"title": "Troop B Zone 2 \u2013 Court Schedules", "lastUpdated": "August 9, 2026", "source": "Troop B Zone 2 Court Cheat Sheet (dated 02/20/2026) + station post map", "howToReadThisFile": ["This file lists every court used by Troop B Zone 2 stations.", "Each station has a list of towns/courts it covers.", "Under each court, 'meets' shows the day(s) and time the court is in session.", "Some towns appear under more than one station because the area is shared.", "Ogdensburg and Norfolk have separate entries for different types of court (V&T, Drug, Criminal).", "To update a schedule: find the court name, change the 'when' or 'time' text, and save the file.", "Examples of 'when' text: '1st and 3rd Monday', 'Every Tuesday', '2nd and 4th Thursday'."]}, "stations": [{"name": "SP Ogdensburg (225 / 226)", "courts": [{"name": "DePeyster", "meets": [{"when": "1st Thursday", "time": "4:00 PM"}]}, {"name": "Hammond", "meets": [{"when": "2nd and 4th Thursday", "time": "9:30 AM"}]}, {"name": "Lisbon", "meets": [{"when": "2nd and 4th Tuesday", "time": "10:30 AM"}]}, {"name": "Macomb", "meets": [{"when": "2nd Thursday", "time": "7:00 PM"}]}, {"name": "Madrid", "meets": [{"when": "2nd and 4th Tuesday", "time": "5:00 PM"}]}, {"name": "Morristown", "meets": [{"when": "1st and 3rd Monday", "time": "1:00 PM"}]}, {"name": "Ogdensburg \u2013 Criminal", "meets": [{"when": "Every Tuesday", "time": "9:00 AM"}], "notes": "Criminal Court"}, {"name": "Ogdensburg \u2013 Drug Court", "meets": [{"when": "1st and 3rd Monday", "time": "12:30 PM"}], "notes": "Drug Court"}, {"name": "Ogdensburg \u2013 V&T", "meets": [{"when": "1st and 3rd Thursday", "time": "9:00 AM"}], "notes": "Vehicle & Traffic"}, {"name": "Oswegatchie / Heuvelton", "meets": [{"when": "1st Wednesday", "time": "3:30 PM"}], "notes": "Heuvelton uses Oswegatchie Court"}, {"name": "Waddington", "meets": [{"when": "1st and 3rd Wednesday", "time": "6:00 PM"}]}]}, {"name": "SP Gouverneur (222 / 220 / 227)", "courts": [{"name": "Clare", "meets": [{"when": "2nd and 4th Wednesday", "time": "6:00 PM"}]}, {"name": "Clifton", "meets": [{"when": "1st and 3rd Tuesday", "time": "6:00 PM"}]}, {"name": "Colton", "meets": [{"when": "2nd and 4th Tuesday", "time": "2:00 PM"}]}, {"name": "DeKalb", "meets": [{"when": "1st and 3rd Tuesday", "time": "7:30 PM"}]}, {"name": "Edwards", "meets": [{"when": "1st, 2nd and 3rd Tuesday", "time": "6:00 PM"}]}, {"name": "Fine", "meets": [{"when": "2nd and 4th Tuesday", "time": "6:30 PM"}]}, {"name": "Fowler", "meets": [{"when": "1st and 3rd Tuesday", "time": "12:00 PM"}]}, {"name": "Gouverneur", "meets": [{"when": "1st and 3rd Thursday", "time": "10:00 AM"}, {"when": "2nd and 4th Wednesday", "time": "10:00 AM"}]}, {"name": "Hammond", "meets": [{"when": "2nd and 4th Thursday", "time": "9:30 AM"}]}, {"name": "Hermon", "meets": [{"when": "1st Monday", "time": "4:30 PM"}, {"when": "3rd Monday", "time": "5:00 PM"}]}, {"name": "Macomb", "meets": [{"when": "2nd Thursday", "time": "7:00 PM"}]}, {"name": "Parishville", "meets": [{"when": "1st and 3rd Tuesday", "time": "2:00 PM"}]}, {"name": "Piercefield", "meets": [{"when": "1st and 3rd Tuesday", "time": "5:00 PM"}]}, {"name": "Pitcairn", "meets": [{"when": "1st and 3rd Thursday", "time": "7:00 PM"}]}, {"name": "Rossie", "meets": [{"when": "1st and 3rd Monday", "time": "7:00 PM"}]}, {"name": "Russell", "meets": [{"when": "1st and 3rd Monday", "time": "6:00 PM"}]}]}, {"name": "SP Canton (223 / 224)", "courts": [{"name": "Canton", "meets": [{"when": "1st and 3rd Monday", "time": "3:30 PM"}, {"when": "3rd and 4th Monday", "time": "1:30 PM"}]}, {"name": "Clare", "meets": [{"when": "2nd and 4th Wednesday", "time": "6:00 PM"}]}, {"name": "DeKalb", "meets": [{"when": "1st and 3rd Tuesday", "time": "7:30 PM"}]}, {"name": "Hermon", "meets": [{"when": "1st Monday", "time": "4:30 PM"}, {"when": "3rd Monday", "time": "5:00 PM"}]}, {"name": "Lisbon", "meets": [{"when": "2nd and 4th Tuesday", "time": "10:30 AM"}]}, {"name": "Pierrepont", "meets": [{"when": "1st and 3rd Tuesday", "time": "4:00 PM"}]}, {"name": "Russell", "meets": [{"when": "1st and 3rd Monday", "time": "6:00 PM"}]}]}, {"name": "SP Massena (230 / 231 / 227 / 228)", "courts": [{"name": "Brasher", "meets": [{"when": "1st and 3rd Tuesday", "time": "6:00 PM"}]}, {"name": "Hopkinton", "meets": [{"when": "1st and 3rd Wednesday", "time": "4:00 PM"}]}, {"name": "Lawrence", "meets": [{"when": "1st and 3rd Tuesday", "time": "6:00 PM"}]}, {"name": "Louisville", "meets": [{"when": "1st, 2nd, 3rd and 4th Wednesday", "time": "5:30 PM"}], "notes": "No 5th Wednesday"}, {"name": "Madrid", "meets": [{"when": "2nd and 4th Tuesday", "time": "5:00 PM"}]}, {"name": "Massena", "meets": [{"when": "2nd and 4th Tuesday", "time": "1:30 PM"}, {"when": "2nd and 4th Wednesday", "time": "1:30 PM"}]}, {"name": "Norfolk", "meets": [{"when": "1st, 2nd, 3rd and 4th Monday", "time": "9:00 AM"}], "notes": "No 5th Monday"}, {"name": "Norfolk \u2013 Criminal", "meets": [{"when": "3rd and 4th Monday", "time": "9:00 AM"}], "notes": "Criminal sessions only"}, {"name": "Stockholm", "meets": [{"when": "1st and 3rd Wednesday", "time": "4:00 PM"}]}, {"name": "Waddington", "meets": [{"when": "1st and 3rd Wednesday", "time": "6:00 PM"}]}]}]};
+
+    loadData();
+  </script>
+</body>
+</html>

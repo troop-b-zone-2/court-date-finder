@@ -1,0 +1,461 @@
+{
+  "about": {
+    "title": "Troop B Zone 2 \u2013 Court Schedules",
+    "lastUpdated": "August 9, 2026",
+    "source": "Troop B Zone 2 Court Cheat Sheet (dated 02/20/2026) + station post map",
+    "howToReadThisFile": [
+      "This file lists every court used by Troop B Zone 2 stations.",
+      "Each station has a list of towns/courts it covers.",
+      "Under each court, 'meets' shows the day(s) and time the court is in session.",
+      "Some towns appear under more than one station because the area is shared.",
+      "Ogdensburg and Norfolk have separate entries for different types of court (V&T, Drug, Criminal).",
+      "To update a schedule: find the court name, change the 'when' or 'time' text, and save the file.",
+      "Examples of 'when' text: '1st and 3rd Monday', 'Every Tuesday', '2nd and 4th Thursday'."
+    ]
+  },
+  "stations": [
+    {
+      "name": "SP Ogdensburg (225 / 226)",
+      "courts": [
+        {
+          "name": "DePeyster",
+          "meets": [
+            {
+              "when": "1st Thursday",
+              "time": "4:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Hammond",
+          "meets": [
+            {
+              "when": "2nd and 4th Thursday",
+              "time": "9:30 AM"
+            }
+          ]
+        },
+        {
+          "name": "Lisbon",
+          "meets": [
+            {
+              "when": "2nd and 4th Tuesday",
+              "time": "10:30 AM"
+            }
+          ]
+        },
+        {
+          "name": "Macomb",
+          "meets": [
+            {
+              "when": "2nd Thursday",
+              "time": "7:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Madrid",
+          "meets": [
+            {
+              "when": "2nd and 4th Tuesday",
+              "time": "5:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Morristown",
+          "meets": [
+            {
+              "when": "1st and 3rd Monday",
+              "time": "1:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Ogdensburg \u2013 Criminal",
+          "meets": [
+            {
+              "when": "Every Tuesday",
+              "time": "9:00 AM"
+            }
+          ],
+          "notes": "Criminal Court"
+        },
+        {
+          "name": "Ogdensburg \u2013 Drug Court",
+          "meets": [
+            {
+              "when": "1st and 3rd Monday",
+              "time": "12:30 PM"
+            }
+          ],
+          "notes": "Drug Court"
+        },
+        {
+          "name": "Ogdensburg \u2013 V&T",
+          "meets": [
+            {
+              "when": "1st and 3rd Thursday",
+              "time": "9:00 AM"
+            }
+          ],
+          "notes": "Vehicle & Traffic"
+        },
+        {
+          "name": "Oswegatchie / Heuvelton",
+          "meets": [
+            {
+              "when": "1st Wednesday",
+              "time": "3:30 PM"
+            }
+          ],
+          "notes": "Heuvelton uses Oswegatchie Court"
+        },
+        {
+          "name": "Waddington",
+          "meets": [
+            {
+              "when": "1st and 3rd Wednesday",
+              "time": "6:00 PM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SP Gouverneur (222 / 220 / 227)",
+      "courts": [
+        {
+          "name": "Clare",
+          "meets": [
+            {
+              "when": "2nd and 4th Wednesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Clifton",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Colton",
+          "meets": [
+            {
+              "when": "2nd and 4th Tuesday",
+              "time": "2:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "DeKalb",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "7:30 PM"
+            }
+          ]
+        },
+        {
+          "name": "Edwards",
+          "meets": [
+            {
+              "when": "1st, 2nd and 3rd Tuesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Fine",
+          "meets": [
+            {
+              "when": "2nd and 4th Tuesday",
+              "time": "6:30 PM"
+            }
+          ]
+        },
+        {
+          "name": "Fowler",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "12:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Gouverneur",
+          "meets": [
+            {
+              "when": "1st and 3rd Thursday",
+              "time": "10:00 AM"
+            },
+            {
+              "when": "2nd and 4th Wednesday",
+              "time": "10:00 AM"
+            }
+          ]
+        },
+        {
+          "name": "Hammond",
+          "meets": [
+            {
+              "when": "2nd and 4th Thursday",
+              "time": "9:30 AM"
+            }
+          ]
+        },
+        {
+          "name": "Hermon",
+          "meets": [
+            {
+              "when": "1st Monday",
+              "time": "4:30 PM"
+            },
+            {
+              "when": "3rd Monday",
+              "time": "5:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Macomb",
+          "meets": [
+            {
+              "when": "2nd Thursday",
+              "time": "7:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Parishville",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "2:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Piercefield",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "5:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Pitcairn",
+          "meets": [
+            {
+              "when": "1st and 3rd Thursday",
+              "time": "7:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Rossie",
+          "meets": [
+            {
+              "when": "1st and 3rd Monday",
+              "time": "7:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Russell",
+          "meets": [
+            {
+              "when": "1st and 3rd Monday",
+              "time": "6:00 PM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SP Canton (223 / 224)",
+      "courts": [
+        {
+          "name": "Canton",
+          "meets": [
+            {
+              "when": "1st and 3rd Monday",
+              "time": "3:30 PM"
+            },
+            {
+              "when": "3rd and 4th Monday",
+              "time": "1:30 PM"
+            }
+          ]
+        },
+        {
+          "name": "Clare",
+          "meets": [
+            {
+              "when": "2nd and 4th Wednesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "DeKalb",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "7:30 PM"
+            }
+          ]
+        },
+        {
+          "name": "Hermon",
+          "meets": [
+            {
+              "when": "1st Monday",
+              "time": "4:30 PM"
+            },
+            {
+              "when": "3rd Monday",
+              "time": "5:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Lisbon",
+          "meets": [
+            {
+              "when": "2nd and 4th Tuesday",
+              "time": "10:30 AM"
+            }
+          ]
+        },
+        {
+          "name": "Pierrepont",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "4:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Russell",
+          "meets": [
+            {
+              "when": "1st and 3rd Monday",
+              "time": "6:00 PM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SP Massena (230 / 231 / 227 / 228)",
+      "courts": [
+        {
+          "name": "Brasher",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Hopkinton",
+          "meets": [
+            {
+              "when": "1st and 3rd Wednesday",
+              "time": "4:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Lawrence",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Louisville",
+          "meets": [
+            {
+              "when": "1st, 2nd, 3rd and 4th Wednesday",
+              "time": "5:30 PM"
+            }
+          ],
+          "notes": "No 5th Wednesday"
+        },
+        {
+          "name": "Madrid",
+          "meets": [
+            {
+              "when": "2nd and 4th Tuesday",
+              "time": "5:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Massena",
+          "meets": [
+            {
+              "when": "2nd and 4th Tuesday",
+              "time": "1:30 PM"
+            },
+            {
+              "when": "2nd and 4th Wednesday",
+              "time": "1:30 PM"
+            }
+          ]
+        },
+        {
+          "name": "Norfolk",
+          "meets": [
+            {
+              "when": "1st, 2nd, 3rd and 4th Monday",
+              "time": "9:00 AM"
+            }
+          ],
+          "notes": "No 5th Monday"
+        },
+        {
+          "name": "Norfolk \u2013 Criminal",
+          "meets": [
+            {
+              "when": "3rd and 4th Monday",
+              "time": "9:00 AM"
+            }
+          ],
+          "notes": "Criminal sessions only"
+        },
+        {
+          "name": "Stockholm",
+          "meets": [
+            {
+              "when": "1st and 3rd Wednesday",
+              "time": "4:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Waddington",
+          "meets": [
+            {
+              "when": "1st and 3rd Wednesday",
+              "time": "6:00 PM"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
