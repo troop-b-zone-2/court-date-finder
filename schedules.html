@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Troop B Zone 2 court schedules – days and times by station" />
+  <title>Court Schedules | Troop B Zone 2</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Page-specific tweaks for the schedule list */
+    .back-link {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 16px;
+    }
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .station-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      margin-bottom: 16px;
+    }
+
+    .station-block h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .court-row {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.6);
+    }
+    .court-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .court-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .court-meets {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .court-meets div {
+      padding: 1px 0;
+    }
+
+    .court-notes {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    .loading {
+      text-align: center;
+      color: var(--muted);
+      padding: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="badge-row">
+        <span class="nysp-badge">NYSP</span>
+        <span class="nysp-badge">Troop B · Zone 2</span>
+      </div>
+      <h1>Court Schedules</h1>
+      <p>Days and times by station</p>
+    </header>
+
+    <a class="back-link" href="index.html">← Court Date Finder</a>
+
+    <div id="content" class="loading">Loading schedules…</div>
+
+    <p class="note">
+      Full data file:
+      <a href="schedules.json" target="_blank" rel="noopener">schedules.json</a>
+    </p>
+
+    <footer>
+      Data from the Troop B Zone 2 Court Cheat Sheet and station post map.
+    </footer>
+  </div>
+
+  <script>
+    (async function () {
+      const content = document.getElementById("content");
+      let data;
+      try {
+        const res = await fetch("schedules.json?t=" + Date.now());
+        if (!res.ok) throw new Error("Failed to load");
+        data = await res.json();
+      } catch (e) {
+        content.textContent = "Could not load schedules.json.";
+        return;
+      }
+
+      const stations = data.stations || [];
+      if (!stations.length) {
+        content.textContent = "No stations found.";
+        return;
+      }
+
+      let html = "";
+      for (const station of stations) {
+        html += '<div class="station-block">';
+        html += "<h2>" + escapeHtml(station.name) + "</h2>";
+
+        for (const court of station.courts || []) {
+          html += '<div class="court-row">';
+          html += '<div class="court-name">' + escapeHtml(court.name) + "</div>";
+          html += '<div class="court-meets">';
+          for (const m of court.meets || []) {
+            html += "<div>" + escapeHtml(m.when) + " @ " + escapeHtml(m.time) + "</div>";
+          }
+          html += "</div>";
+          if (court.notes) {
+            html += '<div class="court-notes">' + escapeHtml(court.notes) + "</div>";
+          }
+          html += "</div>";
+        }
+
+        html += "</div>";
+      }
+
+      content.className = "";
+      content.innerHTML = html;
+    })();
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+  </script>
+</body>
+</html>
