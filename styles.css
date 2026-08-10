@@ -1,0 +1,299 @@
+/* =========================================================
+   Court Date Finder – Troop B Zone 2
+   Subtle NYSP-inspired theme
+   ========================================================= */
+
+:root {
+  /* NYSP-inspired palette */
+  --nysp-navy: #0b1c2c;
+  --nysp-navy-light: #142a3f;
+  --nysp-blue: #1a3a5c;
+  --nysp-gold: #c5a028;
+  --nysp-gold-dim: #a68620;
+  --nysp-gold-glow: rgba(197, 160, 40, 0.18);
+
+  --bg: #0b1c2c;
+  --card: #142a3f;
+  --border: #243b55;
+  --text: #e8eef5;
+  --muted: #8fa3b8;
+  --accent: #c5a028;
+  --accent-hover: #d4b03a;
+  --success: #3dba6f;
+  --success-bg: rgba(61, 186, 111, 0.12);
+
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 20px 16px 48px;
+  line-height: 1.5;
+  background-image:
+    radial-gradient(ellipse at top, rgba(26, 58, 92, 0.45) 0%, transparent 55%);
+}
+
+.container {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+header {
+  text-align: center;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.badge-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.nysp-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nysp-navy);
+  background: var(--nysp-gold);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+header p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.today {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+
+label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--nysp-gold);
+  margin-bottom: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+select {
+  width: 100%;
+  padding: 13px 14px;
+  font-size: 1.02rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--nysp-navy);
+  color: var(--text);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%23c5a028' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--nysp-gold);
+  box-shadow: 0 0 0 3px var(--nysp-gold-glow);
+}
+
+select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ---------- Result ---------- */
+.result {
+  display: none;
+}
+
+.result.show {
+  display: block;
+}
+
+.result-main {
+  text-align: center;
+  padding: 6px 0 2px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--success-bg);
+  color: var(--success);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  letter-spacing: 0.03em;
+}
+
+.result-date {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--nysp-gold);
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+}
+
+.result-time {
+  font-size: 1.12rem;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--nysp-gold);
+  color: var(--nysp-navy);
+  border: none;
+  border-radius: 10px;
+  padding: 11px 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.copy-btn:hover {
+  background: var(--accent-hover);
+}
+
+.copy-btn:active {
+  transform: scale(0.98);
+}
+
+.copy-btn.copied {
+  background: var(--success);
+  color: #fff;
+}
+
+.result-meta {
+  font-size: 0.88rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 13px;
+  margin-top: 14px;
+}
+
+.result-meta > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.result-meta > div:last-of-type {
+  margin-bottom: 0;
+}
+
+.schedule-rules {
+  margin-top: 10px;
+  padding-top: 8px;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.schedule-rules .label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--nysp-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.schedule-rules .rule {
+  padding: 2px 0;
+  color: #d0dceb;
+  font-size: 0.9rem;
+}
+
+.source-note {
+  font-size: 0.78rem;
+  color: #6b8299;
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 18px;
+  line-height: 1.45;
+}
+
+.note code {
+  background: var(--card);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  color: var(--nysp-gold);
+}
+
+footer {
+  text-align: center;
+  margin-top: 26px;
+  font-size: 0.73rem;
+  color: #5a7188;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.error {
+  background: #3b1219;
+  border: 1px solid #7f1d1d;
+  color: #fca5a5;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+  display: none;
+}
