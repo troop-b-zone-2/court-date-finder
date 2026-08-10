@@ -22,17 +22,18 @@
     <div class="today" id="todayLabel"></div>
     <div class="error" id="errorBox"></div>
 
-    <div class="card">
-      <label for="stationSelect">Station</label>
-      <select id="stationSelect">
-        <option value="">— Loading stations —</option>
-      </select>
-    </div>
-
+    <!-- Court first in tab order (skipped while disabled) -->
     <div class="card">
       <label for="courtSelect">Court / Town</label>
       <select id="courtSelect" disabled>
         <option value="">— Select a station first —</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <label for="stationSelect">Station</label>
+      <select id="stationSelect">
+        <option value="">— Loading stations —</option>
       </select>
     </div>
 
@@ -70,11 +71,13 @@
     </div>
 
     <p class="note">
-      Schedules are stored in plain English in <code>schedules.json</code>
-      so anyone can open and verify them.
+      View the full schedule data:
+      <a href="schedules.json" target="_blank" rel="noopener">schedules.json</a>
     </p>
 
-    <footer id="footerMeta">Troop B Zone 2</footer>
+    <footer id="footerMeta">
+      Data from the Troop B Zone 2 Court Cheat Sheet and station post map.
+    </footer>
   </div>
 
   <script src="app.js"></script>

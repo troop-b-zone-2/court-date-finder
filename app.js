@@ -277,6 +277,10 @@
   // ---------- Events ----------
   stationSelect.addEventListener("change", () => {
     populateCourts(stationSelect.value);
+    // Move focus to Court once it is enabled
+    if (stationSelect.value !== "") {
+      courtSelect.focus();
+    }
   });
 
   courtSelect.addEventListener("change", handleCourtSelection);
@@ -314,11 +318,10 @@
     populateStations();
 
     const about = DATA.about || {};
+    const updated = about.lastUpdated ? " Updated " + about.lastUpdated + "." : "";
     footerMeta.textContent =
-      "Updated: " + (about.lastUpdated || "—") + "  •  " + (about.source || "");
-    metaNote.textContent = Array.isArray(about.howToReadThisFile)
-      ? about.howToReadThisFile[0]
-      : about.howToRead || "";
+      "Data from the Troop B Zone 2 Court Cheat Sheet and station post map." + updated;
+    metaNote.textContent = "";
   }
 
   init();

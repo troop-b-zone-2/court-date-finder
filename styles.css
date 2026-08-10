@@ -1,29 +1,20 @@
 /* =========================================================
    Court Date Finder – Troop B Zone 2
-   Subtle NYSP-inspired theme
+   Subtle professional theme
    ========================================================= */
 
 :root {
-  /* NYSP-inspired palette */
-  --nysp-navy: #0b1c2c;
-  --nysp-navy-light: #142a3f;
-  --nysp-blue: #1a3a5c;
-  --nysp-gold: #c5a028;
-  --nysp-gold-dim: #a68620;
-  --nysp-gold-glow: rgba(197, 160, 40, 0.18);
-
-  --bg: #0b1c2c;
-  --card: #142a3f;
-  --border: #243b55;
-  --text: #e8eef5;
-  --muted: #8fa3b8;
-  --accent: #c5a028;
-  --accent-hover: #d4b03a;
-  --success: #3dba6f;
-  --success-bg: rgba(61, 186, 111, 0.12);
-
+  --bg: #0f172a;
+  --card: #1e293b;
+  --border: #334155;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #64748b;
+  --accent-hover: #94a3b8;
+  --gold: #a8a29e;
+  --success: #4ade80;
+  --success-bg: rgba(74, 222, 128, 0.1);
   --radius: 12px;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
 }
 
 *,
@@ -41,8 +32,6 @@ body {
   min-height: 100vh;
   padding: 20px 16px 48px;
   line-height: 1.5;
-  background-image:
-    radial-gradient(ellipse at top, rgba(26, 58, 92, 0.45) 0%, transparent 55%);
 }
 
 .container {
@@ -53,9 +42,7 @@ body {
 /* ---------- Header ---------- */
 header {
   text-align: center;
-  margin-bottom: 22px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
 }
 
 .badge-row {
@@ -68,22 +55,21 @@ header {
 
 .nysp-badge {
   display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--nysp-navy);
-  background: var(--nysp-gold);
-  padding: 3px 10px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
   border-radius: 4px;
 }
 
 header h1 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 4px;
-  color: var(--text);
 }
 
 header p {
@@ -105,17 +91,16 @@ header p {
   border-radius: var(--radius);
   padding: 18px 16px;
   margin-bottom: 14px;
-  box-shadow: var(--shadow);
 }
 
 label {
   display: block;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--nysp-gold);
+  color: var(--muted);
   margin-bottom: 7px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 
 select {
@@ -124,10 +109,10 @@ select {
   font-size: 1.02rem;
   border-radius: 10px;
   border: 1px solid var(--border);
-  background: var(--nysp-navy);
+  background: var(--bg);
   color: var(--text);
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%23c5a028' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   cursor: pointer;
@@ -136,8 +121,8 @@ select {
 
 select:focus {
   outline: none;
-  border-color: var(--nysp-gold);
-  box-shadow: 0 0 0 3px var(--nysp-gold-glow);
+  border-color: #64748b;
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.25);
 }
 
 select:disabled {
@@ -174,7 +159,7 @@ select:disabled {
 .result-date {
   font-size: 1.65rem;
   font-weight: 700;
-  color: var(--nysp-gold);
+  color: var(--text);
   letter-spacing: -0.02em;
   margin-bottom: 2px;
 }
@@ -182,26 +167,27 @@ select:disabled {
 .result-time {
   font-size: 1.12rem;
   margin-bottom: 14px;
-  color: var(--text);
+  color: var(--muted);
 }
 
 .copy-btn {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: var(--nysp-gold);
-  color: var(--nysp-navy);
-  border: none;
+  background: #334155;
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 11px 18px;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
+  transition: background 0.15s, border-color 0.15s;
 }
 
 .copy-btn:hover {
-  background: var(--accent-hover);
+  background: #475569;
+  border-color: #64748b;
 }
 
 .copy-btn:active {
@@ -209,8 +195,9 @@ select:disabled {
 }
 
 .copy-btn.copied {
-  background: var(--success);
-  color: #fff;
+  background: var(--success-bg);
+  border-color: var(--success);
+  color: var(--success);
 }
 
 .result-meta {
@@ -227,10 +214,6 @@ select:disabled {
   margin-bottom: 5px;
 }
 
-.result-meta > div:last-of-type {
-  margin-bottom: 0;
-}
-
 .schedule-rules {
   margin-top: 10px;
   padding-top: 8px;
@@ -242,7 +225,7 @@ select:disabled {
 .schedule-rules .label {
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--nysp-gold);
+  color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 6px;
@@ -250,13 +233,13 @@ select:disabled {
 
 .schedule-rules .rule {
   padding: 2px 0;
-  color: #d0dceb;
+  color: #cbd5e1;
   font-size: 0.9rem;
 }
 
 .source-note {
   font-size: 0.78rem;
-  color: #6b8299;
+  color: #64748b;
   text-align: center;
   margin-top: 12px;
   line-height: 1.4;
@@ -267,28 +250,31 @@ select:disabled {
   color: var(--muted);
   text-align: center;
   margin-top: 18px;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
-.note code {
-  background: var(--card);
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-size: 0.78rem;
-  color: var(--nysp-gold);
+.note a {
+  color: #94a3b8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.note a:hover {
+  color: #e2e8f0;
 }
 
 footer {
   text-align: center;
-  margin-top: 26px;
-  font-size: 0.73rem;
-  color: #5a7188;
+  margin-top: 24px;
+  font-size: 0.75rem;
+  color: #64748b;
   border-top: 1px solid var(--border);
   padding-top: 14px;
+  line-height: 1.5;
 }
 
 .error {
-  background: #3b1219;
+  background: #450a0a;
   border: 1px solid #7f1d1d;
   color: #fca5a5;
   padding: 12px 14px;
