@@ -3,7 +3,8 @@
    Subtle professional theme
    ========================================================= */
 
-:root {
+:root,
+[data-theme="dark"] {
   --bg: #0f172a;
   --card: #1e293b;
   --border: #334155;
@@ -17,7 +18,25 @@
   --nysp-purple-hover: #6d5c9e;
   --success: #4ade80;
   --success-bg: rgba(74, 222, 128, 0.1);
+  --link: #94a3b8;
   --radius: 12px;
+}
+
+[data-theme="light"] {
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --border: #cbd5e1;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #64748b;
+  --accent-hover: #475569;
+  --gold: #c5a028;
+  --gold-dim: #a68620;
+  --nysp-purple: #5b4b8a;
+  --nysp-purple-hover: #4a3d70;
+  --success: #16a34a;
+  --success-bg: rgba(22, 163, 74, 0.12);
+  --link: #1d4ed8;
 }
 
 *,
@@ -54,6 +73,25 @@ header {
   align-items: center;
   gap: 8px;
   margin-bottom: 10px;
+}
+
+
+.theme-toggle {
+  margin-left: 4px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 4px;
+  width: 28px;
+  height: 24px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 .nysp-badge {
@@ -125,7 +163,7 @@ select {
 
 select:focus {
   outline: none;
-  border-color: #64748b;
+  border-color: var(--muted);
   box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.25);
 }
 
@@ -242,19 +280,19 @@ select:disabled {
 .schedule-rules .rule {
   display: block;
   padding: 3px 0;
-  color: #cbd5e1;
+  color: var(--text);
   font-size: 0.9rem;
 }
 
 .schedule-rules .rule.notes {
-  color: #94a3b8;
+  color: var(--muted);
   font-style: italic;
   font-size: 0.85rem;
 }
 
 .source-note {
   font-size: 0.78rem;
-  color: #64748b;
+  color: var(--muted);
   text-align: center;
   margin-top: 12px;
   line-height: 1.4;
@@ -269,7 +307,7 @@ select:disabled {
 }
 
 .note a {
-  color: #94a3b8;
+  color: var(--muted);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -282,7 +320,7 @@ footer {
   text-align: center;
   margin-top: 24px;
   font-size: 0.75rem;
-  color: #64748b;
+  color: var(--muted);
   border-top: 1px solid var(--border);
   padding-top: 14px;
   line-height: 1.5;

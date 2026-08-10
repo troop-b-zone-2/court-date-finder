@@ -1,0 +1,901 @@
+{
+  "about": {
+    "title": "St. Lawrence County Local Criminal Court Directory",
+    "lastUpdated": "February 20, 2026",
+    "source": "ST. LAWRENCE COUNTY LOCAL CRIMINAL COURT JUDGES AND COURT DATE & TIME AS OF 02/20/2026"
+  },
+  "courts": [
+    {
+      "name": "Brasher",
+      "address": [
+        "P.O. Box 358",
+        "11 Factory Street",
+        "Brasher Falls, NY 13613"
+      ],
+      "clerk": "Marcie Provost",
+      "phone": "315-389-4223",
+      "fax": "315-389-4230",
+      "schedule": [
+        "1st and 3rd Tuesday @ 6:00 PM"
+      ],
+      "ada": "Dominick Maida",
+      "ori": "NY044621J",
+      "ccd": "4450",
+      "loc": "4550",
+      "judges": [
+        {
+          "name": "John L. Burns",
+          "home": "315-389-5804",
+          "email": "jlburns@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Canton",
+      "address": [
+        "60 Main Street",
+        "Canton, NY 13617"
+      ],
+      "clerk": "Marc Armstrong / Erin Armstrong",
+      "phone": "315-379-9844",
+      "fax": "315-386-4350",
+      "schedule": [
+        "1st and 3rd Monday @ 3:30 PM",
+        "3rd and 4th Monday @ 1:30 PM"
+      ],
+      "ada": "Jonathan Rhodes",
+      "ori": "NY044371J",
+      "ccd": "4451",
+      "loc": "4551",
+      "judges": [
+        {
+          "name": "Michael R. Morgan",
+          "home": "315-386-1703",
+          "cell": "315-528-1781",
+          "email": "mrmorgan@nycourts.gov"
+        },
+        {
+          "name": "Rachelle L. Foster",
+          "home": "315-212-4440",
+          "email": "rlfoster@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Clare",
+      "address": [
+        "3441 County Route 27",
+        "Russell, NY 13684"
+      ],
+      "clerk": "Jessica Hance",
+      "phone": "315-386-3084",
+      "fax": "315-386-3084",
+      "schedule": [
+        "2nd and 4th Wednesday @ 6:00 PM"
+      ],
+      "ada": "Dillion Bullard (upon request)",
+      "ori": "NY044281J",
+      "ccd": "4452",
+      "loc": "4552",
+      "judges": [
+        {
+          "name": "Fredrick Finley",
+          "cell": "315-562-3274",
+          "work": "315-481-7895",
+          "email": "ffinley@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Clifton",
+      "address": [
+        "P.O. Box 679",
+        "7171 State Route 3",
+        "Cranberry Lake, NY 12927"
+      ],
+      "clerk": "",
+      "phone": "315-848-5522",
+      "fax": "315-848-2632",
+      "schedule": [
+        "1st and 3rd Tuesday @ 6:00 PM"
+      ],
+      "ada": "Matthew Peabody",
+      "ori": "NY044391J",
+      "ccd": "4453",
+      "loc": "4553",
+      "judges": [
+        {
+          "name": "John Dragun",
+          "cell": "315-681-7353",
+          "home": "315-681-2127",
+          "email": "jdragun@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Colton",
+      "address": [
+        "P.O. Box 475",
+        "9 Sugar Bush Lane",
+        "South Colton, NY 13687"
+      ],
+      "clerk": "Michelle Oehler",
+      "phone": "315-262-2380",
+      "fax": "315-262-2027",
+      "schedule": [
+        "2nd and 4th Tuesday @ 2:00 PM"
+      ],
+      "ada": "Michael Abbruzzese",
+      "ori": "NY044631J",
+      "ccd": "4454",
+      "loc": "4554",
+      "judges": [
+        {
+          "name": "George Grubee",
+          "cell": "315-212-3846",
+          "home": "315-384-2091",
+          "email": "ggrubee@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "DeKalb",
+      "address": [
+        "P.O. Box 133",
+        "2907 County Route 17",
+        "Dekalb Junction, NY 13630"
+      ],
+      "clerk": "Sheila Gardner",
+      "phone": "315-347-2071",
+      "fax": "315-347-4477",
+      "schedule": [
+        "1st and 3rd Tuesday @ 7:30 PM"
+      ],
+      "ada": "Jamie Biondolillo",
+      "ori": "NY044311J",
+      "ccd": "4455",
+      "loc": "4555",
+      "judges": [
+        {
+          "name": "Howard Putney",
+          "home": "315-344-7087",
+          "email": "hputney@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "DePeyster",
+      "address": [
+        "P.O. Box 41",
+        "4399 County Route 10",
+        "Depeyster, NY 13633"
+      ],
+      "clerk": "Marc Armstrong",
+      "phone": "315-344-7259",
+      "fax": "315-344-7259",
+      "schedule": [
+        "1st Thursday @ 4:00 PM"
+      ],
+      "ada": "Jamie Biondolillo (upon request)",
+      "ori": "NY044221J",
+      "ccd": "4456",
+      "loc": "4556",
+      "judges": [
+        {
+          "name": "Brian Hicks",
+          "home": "315-386-1703",
+          "cell": "315-528-1781",
+          "email": "bhicks@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Edwards",
+      "address": [
+        "P.O. Box 24",
+        "161 Main Street",
+        "Edwards, NY 13635"
+      ],
+      "clerk": "Irma Ashley",
+      "phone": "315-562-8113",
+      "fax": "315-562-8287",
+      "schedule": [
+        "1st, 2nd and 3rd Tuesday @ 6:00 PM"
+      ],
+      "ada": "Matthew Peabody",
+      "ori": "NY044251J",
+      "ccd": "4457",
+      "loc": "4557",
+      "judges": [
+        {
+          "name": "Fredrick Finley",
+          "home": "315-562-3274",
+          "cell": "315-481-7895",
+          "email": "ffinley@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Fine",
+      "address": [
+        "P.O. Box 455",
+        "4078 State Route 3",
+        "Star Lake, NY 13690"
+      ],
+      "clerk": "Kyra Ames",
+      "phone": "315-848-3121",
+      "fax": "315-848-3152",
+      "schedule": [
+        "2nd and 4th Tuesday @ 6:30 PM"
+      ],
+      "ada": "Matthew Peabody",
+      "ori": "NY044031J",
+      "ccd": "4458",
+      "loc": "4558",
+      "judges": [
+        {
+          "name": "Julie LaTray",
+          "home": "315-848-2004",
+          "email": "jlatray@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Fowler",
+      "address": [
+        "87 Little York Road",
+        "Gouverneur, NY 13642"
+      ],
+      "clerk": "Irma Ashley",
+      "phone": "315-287-0045",
+      "fax": "315-535-4300",
+      "schedule": [
+        "1st and 3rd Tuesday @ 12:00 PM"
+      ],
+      "ada": "Jonathan Rhodes",
+      "ori": "NY044521J",
+      "ccd": "4459",
+      "loc": "4559",
+      "judges": [
+        {
+          "name": "Timothy Knowlton",
+          "cell": "315-323-3128",
+          "email": "tknowlton@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Gouverneur",
+      "address": [
+        "33 Clinton Street",
+        "Gouverneur, NY 13642"
+      ],
+      "clerk": "Kylea Plantz / Taylor Andrews",
+      "phone": "315-287-4623",
+      "fax": "315-287-2343",
+      "schedule": [
+        "1st and 3rd Thursday @ 10:00 AM",
+        "2nd and 4th Wednesday @ 10:00 AM"
+      ],
+      "ada": "Jamie Biondolillo",
+      "ori": "NY044161J",
+      "ccd": "4460",
+      "loc": "4560",
+      "judges": [
+        {
+          "name": "Stan Young",
+          "cell": "315-276-8328",
+          "email": "shyoung@nycourts.gov"
+        },
+        {
+          "name": "Fred Scozzafava",
+          "cell": "315-486-4502",
+          "email": "fscozzafava@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Hammond",
+      "address": [
+        "P.O. Box 219",
+        "21 S. Main Street",
+        "Hammond, NY 13646"
+      ],
+      "clerk": "",
+      "phone": "315-324-5433",
+      "fax": "315-324-6963",
+      "schedule": [
+        "2nd and 4th Thursday @ 9:30 AM"
+      ],
+      "ada": "Dillion Bullard",
+      "ori": "NY044431J",
+      "ccd": "4461",
+      "loc": "4561",
+      "judges": [
+        {
+          "name": "Rhonda Cazziol",
+          "cell": "315-783-1491",
+          "email": "rcazziol@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Hermon",
+      "address": [
+        "P.O. Box 28",
+        "109 Church Street",
+        "Hermon, NY 13652"
+      ],
+      "clerk": "Darcie Velez",
+      "phone": "315-347-2091",
+      "fax": "315-671-1071",
+      "schedule": [
+        "1st Monday @ 4:30 PM",
+        "3rd Monday @ 5:00 PM"
+      ],
+      "ada": "Michael Abbruzzese",
+      "ori": "NY044041J",
+      "ccd": "4462",
+      "loc": "4562",
+      "judges": [
+        {
+          "name": "Chris Velez",
+          "cell": "315-854-1122",
+          "email": "chrisvelez@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Hopkinton",
+      "address": [
+        "7 Church Street",
+        "Hopkinton, NY 12965"
+      ],
+      "clerk": "",
+      "phone": "315-328-4187",
+      "fax": "315-674-0322",
+      "schedule": [
+        "1st and 3rd Wednesday @ 4:00 PM"
+      ],
+      "ada": "Dillion Bullard",
+      "ori": "NY044201J",
+      "ccd": "4463",
+      "loc": "4563",
+      "judges": [
+        {
+          "name": "Stephen Bory",
+          "cell": "315-212-2091",
+          "email": "sbory@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Lawrence",
+      "address": [
+        "11403 State Route 11",
+        "North Lawrence, NY 12967"
+      ],
+      "clerk": "Tracy Villnave",
+      "phone": "315-740-0134",
+      "fax": "315-728-7248",
+      "schedule": [
+        "1st and 3rd Tuesday @ 6:00 PM"
+      ],
+      "ada": "Jonathan Rhodes",
+      "ori": "NY044341J",
+      "ccd": "4464",
+      "loc": "4564",
+      "judges": [
+        {
+          "name": "Missie Hasting-LaVigne",
+          "cell": "518-832-0366",
+          "email": "mlhastings@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Lisbon",
+      "address": [
+        "6963 County Route 10",
+        "Lisbon, NY 13658"
+      ],
+      "clerk": "Josh Ashley",
+      "phone": "315-393-0489",
+      "fax": "315-713-4483",
+      "schedule": [
+        "2nd and 4th Tuesday @ 10:30 AM"
+      ],
+      "ada": "Jonathan Rhodes",
+      "ori": "NY044141J",
+      "ccd": "4465",
+      "loc": "4565",
+      "judges": [
+        {
+          "name": "Michael Ball",
+          "cell": "315-323-4086",
+          "email": "mrball@nycourts.gov"
+        },
+        {
+          "name": "Augustus Burns",
+          "cell": "315-528-8000",
+          "email": "atburns@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Louisville",
+      "address": [
+        "14810 State Route 37",
+        "Massena, NY 13662"
+      ],
+      "clerk": "Christina Barber",
+      "phone": "315-764-1424",
+      "fax": "315-764-0629",
+      "schedule": [
+        "1st and 2nd Wednesday @ 5:30 PM"
+      ],
+      "notes": "No 5th Wednesday",
+      "ada": "Dominik Maida",
+      "ori": "NY044091J",
+      "ccd": "4466",
+      "loc": "4566",
+      "judges": [
+        {
+          "name": "Virginia Gettman",
+          "home": "315-705-4293",
+          "cell": "315-250-4736",
+          "email": "vgettmann@nycourts.gov"
+        },
+        {
+          "name": "Jeff Reynolds",
+          "cell": "315-250-7795",
+          "email": "jareynolds@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Macomb",
+      "address": [
+        "6663 State Route 58",
+        "Hammond, NY 13646"
+      ],
+      "clerk": "Irma Ashley",
+      "phone": "315-578-2212",
+      "fax": "315-578-2233",
+      "schedule": [
+        "2nd Thursday @ 7:00 PM"
+      ],
+      "ada": "Dillion Bullard",
+      "ori": "NY044461J",
+      "ccd": "4467",
+      "loc": "4567",
+      "judges": [
+        {
+          "name": "Steve Burke",
+          "cell": "315-229-2159",
+          "email": "swburke@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Madrid",
+      "address": [
+        "3529 County Route 14",
+        "Madrid, NY 13660"
+      ],
+      "clerk": "Kerri O'Bryan",
+      "phone": "315-528-3399",
+      "fax": "315-322-0324",
+      "schedule": [
+        "2nd and 4th Tuesday @ 5:00 PM"
+      ],
+      "ada": "Dillion Bullard",
+      "ori": "NY044271J",
+      "ccd": "4468",
+      "loc": "4568",
+      "judges": [
+        {
+          "name": "Elizabeth Sharpe",
+          "home": "315-322-4075",
+          "cell": "315-323-8548",
+          "email": "ersharpe@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Massena",
+      "address": [
+        "60 Main Street",
+        "Massena, NY 13662"
+      ],
+      "clerk": "Christina Barber",
+      "phone": "315-769-5431",
+      "fax": "315-705-0938",
+      "schedule": [
+        "2nd and 4th Tuesday @ 1:30 PM",
+        "2nd and 4th Wednesday @ 1:30 PM"
+      ],
+      "ada": "Michael Abbruzzese (Tue) / Alex Nichols (Wed)",
+      "ori": "NY044241J",
+      "ccd": "4469",
+      "loc": "4569",
+      "judges": [
+        {
+          "name": "Joseph Brown",
+          "cell": "315-250-1485",
+          "email": "jwbrown@nycourts.gov"
+        },
+        {
+          "name": "Eric Sharlow",
+          "cell": "315-842-8234",
+          "email": "esharlow@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Morristown",
+      "address": [
+        "P.O. Box 240",
+        "604 Main Street",
+        "Morristown, NY 13664"
+      ],
+      "clerk": "Carol Woodcock",
+      "phone": "315-375-4148",
+      "fax": "315-375-6385",
+      "schedule": [
+        "1st and 3rd Monday @ 1:00 PM"
+      ],
+      "ada": "Dillion Bullard",
+      "ori": "NY044291J",
+      "ccd": "4470",
+      "loc": "4570",
+      "judges": [
+        {
+          "name": "James Phillips Jr.",
+          "home": "315-375-8249",
+          "cell": "315-322-1024",
+          "email": "jphillips@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Norfolk",
+      "address": [
+        "P.O. Box 481",
+        "5 West Main Street",
+        "Norfolk, NY 13667"
+      ],
+      "clerk": "Carol Tuttle",
+      "phone": "315-384-4721",
+      "fax": "315-384-3201",
+      "schedule": [
+        "Mondays @ 9:00 AM (no 5th)",
+        "Criminal: 3rd and 4th Monday @ 9:00 AM"
+      ],
+      "ada": "Jonathan Rhodes",
+      "ori": "NY044111J",
+      "ccd": "4471",
+      "loc": "4571",
+      "judges": [
+        {
+          "name": "George Grubee",
+          "home": "315-384-2091",
+          "cell": "315-212-3846",
+          "email": "ggrubee@nycourts.gov"
+        },
+        {
+          "name": "Derek Stevenson",
+          "cell": "315-244-2436",
+          "email": "dcstevenson@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Ogdensburg",
+      "address": [
+        "330 Ford Street",
+        "Ogdensburg, NY 13669"
+      ],
+      "clerk": "Natalie Spilman / Cathy Bentley / Nicole Thornhill",
+      "phone": "315-393-3941",
+      "fax": "315-393-6839",
+      "schedule": [
+        "V&T: 1st and 3rd Thursday @ 9:00 AM",
+        "Drug: 1st and 3rd Monday @ 12:30 PM",
+        "Criminal: Every Tuesday @ 9:00 AM"
+      ],
+      "ada": "Josh Haberkornhalm / Matthew Peabody",
+      "ori": "NY044011J",
+      "ccd": "4401",
+      "loc": "4501",
+      "judges": [
+        {
+          "name": "Keith Massey",
+          "cell": "732-567-8214",
+          "email": "kmassey@nycourts.gov"
+        },
+        {
+          "name": "Marcia LeMay",
+          "cell": "315-528-4694",
+          "email": "mlemay@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Oswegatchie / Heuvelton",
+      "address": [
+        "51 State Street",
+        "Heuvelton, NY 13654"
+      ],
+      "clerk": "Macy Norman",
+      "phone": "315-344-7284",
+      "fax": "315-344-7963",
+      "schedule": [
+        "1st Wednesday @ 3:30 PM"
+      ],
+      "ada": "Josh Haberkornhalm",
+      "ori": "NY044021J",
+      "ccd": "4472",
+      "loc": "4572",
+      "judges": [
+        {
+          "name": "Matthew Denner",
+          "cell": "315-408-8444",
+          "email": "mdenner@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Parishville",
+      "address": [
+        "P.O. Box 155",
+        "1772 State Route 72",
+        "Parishville, NY"
+      ],
+      "clerk": "Lori Hayes",
+      "phone": "315-265-2131",
+      "fax": "315-265-2132",
+      "schedule": [
+        "1st and 3rd Tuesday @ 2:00 PM"
+      ],
+      "ada": "Summer Scovil",
+      "ori": "NY044131J",
+      "ccd": "4473",
+      "loc": "4573",
+      "judges": [
+        {
+          "name": "Frank Sisto",
+          "home": "757-651-5276",
+          "email": "fsisto@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Piercefield",
+      "address": [
+        "P.O. Box 220",
+        "48 Waller Street",
+        "Piercefield, NY 12973"
+      ],
+      "clerk": "Sherri Snyder",
+      "phone": "518-359-2237",
+      "fax": "518-554-1030",
+      "schedule": [
+        "1st and 3rd Tuesday @ 5:00 PM"
+      ],
+      "ada": "Summer Scovil (upon request)",
+      "ori": "NY044591J",
+      "ccd": "4474",
+      "loc": "4574",
+      "judges": [
+        {
+          "name": "John Kopp",
+          "home": "518-354-1500",
+          "email": "jkopp@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Pierrepont",
+      "address": [
+        "864 State Route 68",
+        "Canton, NY 13617"
+      ],
+      "clerk": "Laurie Hance",
+      "phone": "315-379-0415",
+      "fax": "315-728-7526",
+      "schedule": [
+        "1st and 3rd Tuesday @ 4:00 PM"
+      ],
+      "ada": "Alex Nichols",
+      "ori": "NY044071J",
+      "ccd": "4475",
+      "loc": "4575",
+      "judges": [
+        {
+          "name": "Daniel Manor Sr.",
+          "cell": "315-523-0855",
+          "email": "dmanor@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Pitcairn",
+      "address": [
+        "10 Edwards Road",
+        "Harrisville, NY 13648"
+      ],
+      "clerk": "",
+      "phone": "315-543-2111",
+      "fax": "315-543-9577",
+      "schedule": [
+        "1st and 3rd Thursday @ 7:00 PM"
+      ],
+      "ada": "Summer Scovil",
+      "ori": "NY044081J",
+      "ccd": "4476",
+      "loc": "4576",
+      "judges": [
+        {
+          "name": "Rick Bearor",
+          "cell": "315-804-7948",
+          "email": "rbearor@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Potsdam",
+      "address": [
+        "35 Market Street",
+        "Potsdam, NY 13676"
+      ],
+      "clerk": "Sherri Snyder / Peggy Bruso",
+      "phone": "315-265-4318",
+      "fax": "315-268-0634",
+      "schedule": [
+        "V&T: Wednesday @ 10:00 AM (no 5th)",
+        "PL: Wednesday @ 12:00 PM (no 5th)"
+      ],
+      "ada": "Dominick Maida (1st Wed) / Dillion Bullard (2nd Wed)",
+      "ori": "NY044321J",
+      "ccd": "4477",
+      "loc": "4577",
+      "judges": [
+        {
+          "name": "Jim Mason",
+          "cell": "315-854-3237",
+          "email": "jmason@nycourts.gov"
+        },
+        {
+          "name": "David Haggard",
+          "cell": "315-323-1218",
+          "email": "dhaggard@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Rossie",
+      "address": [
+        "908 County Route 3",
+        "Redwood, NY 13679"
+      ],
+      "clerk": "Rhonda Cazziol",
+      "phone": "315-324-5166",
+      "fax": "315-324-6870",
+      "schedule": [
+        "1st and 3rd Monday @ 7:00 PM"
+      ],
+      "ada": "Summer Scovil",
+      "ori": "NY044641J",
+      "ccd": "4478",
+      "loc": "4578",
+      "judges": [
+        {
+          "name": "Mark Phalen",
+          "cell": "315-778-6815",
+          "email": "mphalen@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Russell",
+      "address": [
+        "P.O. Box 628",
+        "9 Pestle Street",
+        "Russell, NY 13684"
+      ],
+      "clerk": "Brenda Hale",
+      "phone": "315-347-4824",
+      "fax": "315-347-2570",
+      "schedule": [
+        "1st and 3rd Monday @ 6:00 PM"
+      ],
+      "ada": "Mike Abbruzzese",
+      "ori": "NY044151J",
+      "ccd": "4479",
+      "loc": "4579",
+      "judges": [
+        {
+          "name": "Marty Dumoulin",
+          "cell": "315-244-8226",
+          "email": "mdumoulin@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Stockholm",
+      "address": [
+        "540 State Route 11C",
+        "Winthrop, NY 13697"
+      ],
+      "clerk": "Heather Kish",
+      "phone": "315-262-8061 ext. 101",
+      "fax": "315-671-2828",
+      "schedule": [
+        "1st and 3rd Wednesday @ 4:00 PM"
+      ],
+      "ada": "Mike Abbruzzese",
+      "ori": "NY044101J",
+      "ccd": "4480",
+      "loc": "4580",
+      "judges": [
+        {
+          "name": "VACANT"
+        }
+      ]
+    },
+    {
+      "name": "Waddington",
+      "address": [
+        "46A Maple Street",
+        "Waddington, NY 13694"
+      ],
+      "clerk": "Kerri O'Bryan",
+      "phone": "315-388-5629",
+      "fax": "315-388-5957",
+      "schedule": [
+        "1st and 3rd Wednesday @ 6:00 PM"
+      ],
+      "ada": "Summer Scovil",
+      "ori": "NY044361J",
+      "ccd": "4481",
+      "loc": "4581",
+      "judges": [
+        {
+          "name": "Kevin Clark",
+          "cell": "315-244-9539",
+          "email": "kjclark@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Bombay",
+      "address": [
+        "379 Lantry Road",
+        "Bombay, NY 12914"
+      ],
+      "clerk": "",
+      "phone": "518-358-9968",
+      "fax": "518-358-9892",
+      "schedule": [
+        "Tuesdays @ 3:00 PM"
+      ],
+      "notes": "Franklin County \u2013 Other Courts",
+      "ada": "Franklin County ADA",
+      "ori": "",
+      "ccd": "",
+      "loc": "",
+      "judges": [
+        {
+          "name": "Curtis Smith",
+          "cell": "518-521-9549",
+          "home": "518-358-2952"
+        },
+        {
+          "name": "Terry Durant",
+          "cell": "518-521-0786"
+        }
+      ]
+    }
+  ]
+}

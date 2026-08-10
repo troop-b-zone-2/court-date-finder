@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="St. Lawrence County local criminal court directory – addresses, clerks, judges, phones" />
+  <title>Court Directory | Troop B Zone 2</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .back-link {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 16px;
+    }
+    .back-link:hover { color: var(--text); }
+
+    .search-box {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .search-box:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.25);
+    }
+
+    .court-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .court-card h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .court-grid {
+      display: grid;
+      gap: 10px;
+      font-size: 0.88rem;
+    }
+    .field-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+    .field-value {
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .field-value a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .field-value a:hover { text-decoration: underline; }
+    .ids {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .loading { text-align: center; color: var(--muted); padding: 24px; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="badge-row">
+        <span class="nysp-badge">NYSP</span>
+        <span class="nysp-badge">Troop B · Zone 2</span>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle day/night mode" title="Day / Night">◐</button>
+      </div>
+      <h1>Court Directory</h1>
+      <p>Addresses, clerks, judges &amp; contact info</p>
+    </header>
+
+    <a class="back-link" href="index.html">← Court Date Finder</a>
+
+    <input type="search" class="search-box" id="searchBox" placeholder="Search court, town, judge, clerk…" autocomplete="off" />
+
+    <div id="content" class="loading">Loading directory…</div>
+
+    <p class="note">
+      Data file:
+      <a href="courts-info.json" target="_blank" rel="noopener">courts-info.json</a>
+      ·
+      <a href="schedules.html">Schedules only</a>
+    </p>
+
+    <footer>
+      From St. Lawrence County Local Criminal Court Judges and Court Date &amp; Time sheet (02/20/2026).
+    </footer>
+  </div>
+
+  <script src="theme.js"></script>
+  <script>
+    function esc(s) {
+      return String(s || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function judgeHtml(j) {
+      let parts = ["<strong>" + esc(j.name) + "</strong>"];
+      if (j.cell) parts.push("Cell: " + esc(j.cell));
+      if (j.home) parts.push("Home: " + esc(j.home));
+      if (j.work) parts.push("Work: " + esc(j.work));
+      if (j.email) parts.push('<a href="mailto:' + esc(j.email) + '">' + esc(j.email) + "</a>");
+      return parts.join("<br>");
+    }
+
+    function cardHtml(c) {
+      let h = '<div class="court-card" data-search="' + esc((c.name + " " + (c.clerk || "") + " " + (c.ada || "") + " " + (c.judges || []).map(j => j.name).join(" ")).toLowerCase()) + '">';
+      h += "<h2>" + esc(c.name) + "</h2><div class=\"court-grid\">";
+
+      if (c.address && c.address.length) {
+        h += '<div><div class="field-label">Address</div><div class="field-value">' + c.address.map(esc).join("<br>") + "</div></div>";
+      }
+      if (c.phone || c.fax || c.clerk) {
+        h += '<div><div class="field-label">Court office</div><div class="field-value">';
+        if (c.clerk) h += "Clerk: " + esc(c.clerk) + "<br>";
+        if (c.phone) h += 'Phone: <a href="tel:' + esc(c.phone.replace(/[^0-9+]/g, "")) + '">' + esc(c.phone) + "</a><br>";
+        if (c.fax) h += "Fax: " + esc(c.fax);
+        h += "</div></div>";
+      }
+      if (c.schedule && c.schedule.length) {
+        h += '<div><div class="field-label">Schedule</div><div class="field-value">' + c.schedule.map(esc).join("<br>") + "</div></div>";
+      }
+      if (c.notes) {
+        h += '<div><div class="field-label">Notes</div><div class="field-value">' + esc(c.notes) + "</div></div>";
+      }
+      if (c.ada) {
+        h += '<div><div class="field-label">ADA</div><div class="field-value">' + esc(c.ada) + "</div></div>";
+      }
+      if (c.judges && c.judges.length) {
+        h += '<div><div class="field-label">Judge(s)</div><div class="field-value">' + c.judges.map(judgeHtml).join("<br><br>") + "</div></div>";
+      }
+      if (c.ori || c.ccd || c.loc) {
+        h += '<div class="ids">';
+        if (c.ori) h += "ORI# " + esc(c.ori) + " · ";
+        if (c.ccd) h += "CCD# " + esc(c.ccd) + " · ";
+        if (c.loc) h += "LOC# " + esc(c.loc);
+        h += "</div>";
+      }
+
+      h += "</div></div>";
+      return h;
+    }
+
+    (async function () {
+      const content = document.getElementById("content");
+      let data;
+      try {
+        const res = await fetch("courts-info.json?t=" + Date.now());
+        if (!res.ok) throw new Error("fail");
+        data = await res.json();
+      } catch (e) {
+        content.textContent = "Could not load courts-info.json.";
+        return;
+      }
+
+      const courts = (data.courts || []).slice().sort((a, b) => a.name.localeCompare(b.name));
+      content.className = "";
+      content.innerHTML = courts.map(cardHtml).join("");
+
+      const box = document.getElementById("searchBox");
+      box.addEventListener("input", () => {
+        const q = box.value.trim().toLowerCase();
+        content.querySelectorAll(".court-card").forEach((el) => {
+          const match = !q || (el.getAttribute("data-search") || "").includes(q);
+          el.classList.toggle("hidden", !match);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
