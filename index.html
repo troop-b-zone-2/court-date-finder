@@ -22,18 +22,18 @@
     <div class="today" id="todayLabel"></div>
     <div class="error" id="errorBox"></div>
 
-    <!-- Court first in tab order (skipped while disabled) -->
-    <div class="card">
-      <label for="courtSelect">Court / Town</label>
-      <select id="courtSelect" disabled>
-        <option value="">— Select a station first —</option>
-      </select>
-    </div>
-
+    <!-- Station first (correct mobile flow), Court second -->
     <div class="card">
       <label for="stationSelect">Station</label>
       <select id="stationSelect">
         <option value="">— Loading stations —</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <label for="courtSelect">Court / Town</label>
+      <select id="courtSelect" disabled>
+        <option value="">— Select a station first —</option>
       </select>
     </div>
 
@@ -65,8 +65,6 @@
         </div>
         <div class="schedule-rules" id="scheduleRules"></div>
       </div>
-
-      <div class="source-note" id="metaNote"></div>
     </div>
 
     <p class="note">

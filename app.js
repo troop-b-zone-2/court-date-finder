@@ -220,12 +220,15 @@
     document.getElementById("resultDays").textContent = result.daysFromToday + " days";
 
     const rulesBox = document.getElementById("scheduleRules");
-    let lines = result.meets.map((m) => m.when + " @ " + m.time);
-    if (result.notes) lines.push(result.notes);
-
-    rulesBox.innerHTML =
-      '<div class="label">Court Schedule</div>' +
-      lines.map((l) => '<div class="rule">' + l + "</div>").join("");
+    let html = '<div class="label">Court Schedule</div>';
+    for (const m of result.meets) {
+      html += '<div class="rule">' + m.when + " @ " + m.time + "</div>";
+    }
+    if (result.notes) {
+      html += '<div class="label" style="margin-top:8px">Notes</div>';
+      html += '<div class="rule notes">' + result.notes + "</div>";
+    }
+    rulesBox.innerHTML = html;
 
     currentCopyText = formatMMDDYYYY(result.date) + " " + result.time;
     autoCopy(currentCopyText);
@@ -280,16 +283,6 @@
   });
 
   courtSelect.addEventListener("change", handleCourtSelection);
-
-  let prevCourt = "";
-  courtSelect.addEventListener("focus", () => {
-    prevCourt = courtSelect.value;
-  });
-  courtSelect.addEventListener("blur", () => {
-    if (courtSelect.value && courtSelect.value === prevCourt) {
-      handleCourtSelection();
-    }
-  });
 
   copyBtn.addEventListener("click", () => {
     if (currentCopyText) autoCopy(currentCopyText);

@@ -236,9 +236,15 @@ select:disabled {
 
 .schedule-rules .rule {
   display: block;
-  padding: 2px 0;
+  padding: 3px 0;
   color: #cbd5e1;
   font-size: 0.9rem;
+}
+
+.schedule-rules .rule.notes {
+  color: #94a3b8;
+  font-style: italic;
+  font-size: 0.85rem;
 }
 
 .source-note {
