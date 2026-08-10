@@ -277,10 +277,6 @@
   // ---------- Events ----------
   stationSelect.addEventListener("change", () => {
     populateCourts(stationSelect.value);
-    // Move focus to Court once it is enabled
-    if (stationSelect.value !== "") {
-      courtSelect.focus();
-    }
   });
 
   courtSelect.addEventListener("change", handleCourtSelection);

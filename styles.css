@@ -235,6 +235,7 @@ select:disabled {
 }
 
 .schedule-rules .rule {
+  display: block;
   padding: 2px 0;
   color: #cbd5e1;
   font-size: 0.9rem;
