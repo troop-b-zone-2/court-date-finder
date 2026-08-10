@@ -11,7 +11,10 @@
   --muted: #94a3b8;
   --accent: #64748b;
   --accent-hover: #94a3b8;
-  --gold: #a8a29e;
+  --gold: #c5a028;
+  --gold-dim: #a68620;
+  --nysp-purple: #5b4b8a;
+  --nysp-purple-hover: #6d5c9e;
   --success: #4ade80;
   --success-bg: rgba(74, 222, 128, 0.1);
   --radius: 12px;
@@ -56,11 +59,12 @@ header {
 .nysp-badge {
   display: inline-block;
   font-size: 0.65rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
-  border: 1px solid var(--border);
+  color: #0f172a;
+  background: var(--gold);
+  border: 1px solid var(--gold-dim);
   padding: 2px 8px;
   border-radius: 4px;
 }
@@ -174,9 +178,9 @@ select:disabled {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: #334155;
-  color: var(--text);
-  border: 1px solid var(--border);
+  background: var(--nysp-purple);
+  color: #f1f5f9;
+  border: 1px solid transparent;
   border-radius: 10px;
   padding: 11px 18px;
   font-size: 0.95rem;
@@ -186,8 +190,7 @@ select:disabled {
 }
 
 .copy-btn:hover {
-  background: #475569;
-  border-color: #64748b;
+  background: var(--nysp-purple-hover);
 }
 
 .copy-btn:active {
