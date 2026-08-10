@@ -211,15 +211,20 @@ select:disabled {
   margin-top: 14px;
 }
 
-.result-meta > div {
+.result-meta > div:not(.schedule-rules) {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
 
-.schedule-rules {
+.result-meta > .schedule-rules {
+  display: block;
   margin-top: 10px;
-  padding-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.schedule-rules {
   font-size: 0.88rem;
   color: var(--text);
   line-height: 1.55;
