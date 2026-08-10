@@ -98,10 +98,14 @@
     <div id="content" class="loading">Loading directory…</div>
 
     <p class="note">
-      Data file:
-      <a href="courts-info.json" target="_blank" rel="noopener">courts-info.json</a>
+      Data files:
+      <a href="courts-info.json" target="_blank" rel="noopener">Contact directory data</a>
       ·
-      <a href="schedules.html">Schedules only</a>
+      <a href="schedules.json" target="_blank" rel="noopener">Schedule data</a>
+      ·
+      <a href="schedules.html">Days &amp; times list</a>
+      ·
+      <a href="index.html">Date finder</a>
     </p>
 
     <footer>
@@ -128,31 +132,80 @@
       return parts.join("<br>");
     }
 
-    function cardHtml(c) {
-      let h = '<div class="court-card" data-search="' + esc((c.name + " " + (c.clerk || "") + " " + (c.ada || "") + " " + (c.judges || []).map(j => j.name).join(" ")).toLowerCase()) + '">';
+    // Build schedule lookup from schedules.json (source of truth)
+    function buildScheduleMap(schedData) {
+      const map = {};
+      for (const station of schedData.stations || []) {
+        for (const court of station.courts || []) {
+          const key = court.name;
+          if (!map[key]) map[key] = { meets: [], notes: null };
+          for (const m of court.meets || []) {
+            const line = m.when + " @ " + m.time;
+            if (!map[key].meets.includes(line)) map[key].meets.push(line);
+          }
+          if (court.notes) map[key].notes = court.notes;
+        }
+      }
+      // Fold specialized Ogdensburg / Norfolk entries into the parent cards
+      function fold(parent, prefixes) {
+        if (!map[parent]) map[parent] = { meets: [], notes: null };
+        for (const full of Object.keys(map)) {
+          for (const p of prefixes) {
+            if (full === p || full.startsWith(p + " –") || full.startsWith(p + " -")) {
+              for (const line of map[full].meets) {
+                // Prefer labeled lines for specialized courts
+                let out = line;
+                if (full !== parent && full.includes("–")) {
+                  const label = full.split("–")[1].trim();
+                  if (!line.includes(label)) out = label + ": " + line;
+                }
+                if (!map[parent].meets.includes(out)) map[parent].meets.push(out);
+              }
+            }
+          }
+        }
+      }
+      fold("Ogdensburg", ["Ogdensburg"]);
+      fold("Norfolk", ["Norfolk"]);
+      return map;
+    }
+
+    function cardHtml(c, scheduleMap) {
+      const sched = scheduleMap[c.name] || { meets: [], notes: null };
+      let searchBits = [c.name, c.clerk || "", c.ada || ""]
+        .concat((c.judges || []).map((j) => j.name))
+        .concat(sched.meets)
+        .join(" ")
+        .toLowerCase();
+
+      let h = '<div class="court-card" data-search="' + esc(searchBits) + '">';
       h += "<h2>" + esc(c.name) + "</h2><div class=\"court-grid\">";
 
       if (c.address && c.address.length) {
-        h += '<div><div class="field-label">Address</div><div class="field-value">' + c.address.map(esc).join("<br>") + "</div></div>";
+        h += '<div><div class="field-label">Address</div><div class="field-value">' +
+          c.address.map(esc).join("<br>") + "</div></div>";
       }
       if (c.phone || c.fax || c.clerk) {
         h += '<div><div class="field-label">Court office</div><div class="field-value">';
         if (c.clerk) h += "Clerk: " + esc(c.clerk) + "<br>";
-        if (c.phone) h += 'Phone: <a href="tel:' + esc(c.phone.replace(/[^0-9+]/g, "")) + '">' + esc(c.phone) + "</a><br>";
+        if (c.phone) h += 'Phone: <a href="tel:' + esc(String(c.phone).replace(/[^0-9+]/g, "")) + '">' + esc(c.phone) + "</a><br>";
         if (c.fax) h += "Fax: " + esc(c.fax);
         h += "</div></div>";
       }
-      if (c.schedule && c.schedule.length) {
-        h += '<div><div class="field-label">Schedule</div><div class="field-value">' + c.schedule.map(esc).join("<br>") + "</div></div>";
+      if (sched.meets.length) {
+        h += '<div><div class="field-label">Schedule</div><div class="field-value">' +
+          sched.meets.map(esc).join("<br>") + "</div></div>";
       }
-      if (c.notes) {
-        h += '<div><div class="field-label">Notes</div><div class="field-value">' + esc(c.notes) + "</div></div>";
+      if (sched.notes || c.notes) {
+        h += '<div><div class="field-label">Notes</div><div class="field-value">' +
+          esc(sched.notes || c.notes) + "</div></div>";
       }
       if (c.ada) {
         h += '<div><div class="field-label">ADA</div><div class="field-value">' + esc(c.ada) + "</div></div>";
       }
       if (c.judges && c.judges.length) {
-        h += '<div><div class="field-label">Judge(s)</div><div class="field-value">' + c.judges.map(judgeHtml).join("<br><br>") + "</div></div>";
+        h += '<div><div class="field-label">Judge(s)</div><div class="field-value">' +
+          c.judges.map(judgeHtml).join("<br><br>") + "</div></div>";
       }
       if (c.ori || c.ccd || c.loc) {
         h += '<div class="ids">';
@@ -168,19 +221,25 @@
 
     (async function () {
       const content = document.getElementById("content");
-      let data;
+      let info, sched;
       try {
-        const res = await fetch("courts-info.json?t=" + Date.now());
-        if (!res.ok) throw new Error("fail");
-        data = await res.json();
+        const [r1, r2] = await Promise.all([
+          fetch("courts-info.json?t=" + Date.now()),
+          fetch("schedules.json?t=" + Date.now())
+        ]);
+        if (!r1.ok) throw new Error("courts-info");
+        if (!r2.ok) throw new Error("schedules");
+        info = await r1.json();
+        sched = await r2.json();
       } catch (e) {
-        content.textContent = "Could not load courts-info.json.";
+        content.textContent = "Could not load court data (" + e.message + ").";
         return;
       }
 
-      const courts = (data.courts || []).slice().sort((a, b) => a.name.localeCompare(b.name));
+      const scheduleMap = buildScheduleMap(sched);
+      const courts = (info.courts || []).slice().sort((a, b) => a.name.localeCompare(b.name));
       content.className = "";
-      content.innerHTML = courts.map(cardHtml).join("");
+      content.innerHTML = courts.map((c) => cardHtml(c, scheduleMap)).join("");
 
       const box = document.getElementById("searchBox");
       box.addEventListener("input", () => {
@@ -193,4 +252,3 @@
     })();
   </script>
 </body>
-</html>

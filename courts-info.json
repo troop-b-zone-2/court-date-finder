@@ -15,9 +15,6 @@
       "clerk": "Marcie Provost",
       "phone": "315-389-4223",
       "fax": "315-389-4230",
-      "schedule": [
-        "1st and 3rd Tuesday @ 6:00 PM"
-      ],
       "ada": "Dominick Maida",
       "ori": "NY044621J",
       "ccd": "4450",
@@ -39,10 +36,6 @@
       "clerk": "Marc Armstrong / Erin Armstrong",
       "phone": "315-379-9844",
       "fax": "315-386-4350",
-      "schedule": [
-        "1st and 3rd Monday @ 3:30 PM",
-        "3rd and 4th Monday @ 1:30 PM"
-      ],
       "ada": "Jonathan Rhodes",
       "ori": "NY044371J",
       "ccd": "4451",
@@ -70,9 +63,6 @@
       "clerk": "Jessica Hance",
       "phone": "315-386-3084",
       "fax": "315-386-3084",
-      "schedule": [
-        "2nd and 4th Wednesday @ 6:00 PM"
-      ],
       "ada": "Dillion Bullard (upon request)",
       "ori": "NY044281J",
       "ccd": "4452",
@@ -96,9 +86,6 @@
       "clerk": "",
       "phone": "315-848-5522",
       "fax": "315-848-2632",
-      "schedule": [
-        "1st and 3rd Tuesday @ 6:00 PM"
-      ],
       "ada": "Matthew Peabody",
       "ori": "NY044391J",
       "ccd": "4453",
@@ -122,9 +109,6 @@
       "clerk": "Michelle Oehler",
       "phone": "315-262-2380",
       "fax": "315-262-2027",
-      "schedule": [
-        "2nd and 4th Tuesday @ 2:00 PM"
-      ],
       "ada": "Michael Abbruzzese",
       "ori": "NY044631J",
       "ccd": "4454",
@@ -148,9 +132,6 @@
       "clerk": "Sheila Gardner",
       "phone": "315-347-2071",
       "fax": "315-347-4477",
-      "schedule": [
-        "1st and 3rd Tuesday @ 7:30 PM"
-      ],
       "ada": "Jamie Biondolillo",
       "ori": "NY044311J",
       "ccd": "4455",
@@ -173,9 +154,6 @@
       "clerk": "Marc Armstrong",
       "phone": "315-344-7259",
       "fax": "315-344-7259",
-      "schedule": [
-        "1st Thursday @ 4:00 PM"
-      ],
       "ada": "Jamie Biondolillo (upon request)",
       "ori": "NY044221J",
       "ccd": "4456",
@@ -199,9 +177,6 @@
       "clerk": "Irma Ashley",
       "phone": "315-562-8113",
       "fax": "315-562-8287",
-      "schedule": [
-        "1st, 2nd and 3rd Tuesday @ 6:00 PM"
-      ],
       "ada": "Matthew Peabody",
       "ori": "NY044251J",
       "ccd": "4457",
@@ -225,9 +200,6 @@
       "clerk": "Kyra Ames",
       "phone": "315-848-3121",
       "fax": "315-848-3152",
-      "schedule": [
-        "2nd and 4th Tuesday @ 6:30 PM"
-      ],
       "ada": "Matthew Peabody",
       "ori": "NY044031J",
       "ccd": "4458",
@@ -249,9 +221,6 @@
       "clerk": "Irma Ashley",
       "phone": "315-287-0045",
       "fax": "315-535-4300",
-      "schedule": [
-        "1st and 3rd Tuesday @ 12:00 PM"
-      ],
       "ada": "Jonathan Rhodes",
       "ori": "NY044521J",
       "ccd": "4459",
@@ -273,10 +242,6 @@
       "clerk": "Kylea Plantz / Taylor Andrews",
       "phone": "315-287-4623",
       "fax": "315-287-2343",
-      "schedule": [
-        "1st and 3rd Thursday @ 10:00 AM",
-        "2nd and 4th Wednesday @ 10:00 AM"
-      ],
       "ada": "Jamie Biondolillo",
       "ori": "NY044161J",
       "ccd": "4460",
@@ -304,9 +269,6 @@
       "clerk": "",
       "phone": "315-324-5433",
       "fax": "315-324-6963",
-      "schedule": [
-        "2nd and 4th Thursday @ 9:30 AM"
-      ],
       "ada": "Dillion Bullard",
       "ori": "NY044431J",
       "ccd": "4461",
@@ -329,10 +291,6 @@
       "clerk": "Darcie Velez",
       "phone": "315-347-2091",
       "fax": "315-671-1071",
-      "schedule": [
-        "1st Monday @ 4:30 PM",
-        "3rd Monday @ 5:00 PM"
-      ],
       "ada": "Michael Abbruzzese",
       "ori": "NY044041J",
       "ccd": "4462",
@@ -354,9 +312,6 @@
       "clerk": "",
       "phone": "315-328-4187",
       "fax": "315-674-0322",
-      "schedule": [
-        "1st and 3rd Wednesday @ 4:00 PM"
-      ],
       "ada": "Dillion Bullard",
       "ori": "NY044201J",
       "ccd": "4463",
@@ -378,9 +333,6 @@
       "clerk": "Tracy Villnave",
       "phone": "315-740-0134",
       "fax": "315-728-7248",
-      "schedule": [
-        "1st and 3rd Tuesday @ 6:00 PM"
-      ],
       "ada": "Jonathan Rhodes",
       "ori": "NY044341J",
       "ccd": "4464",
@@ -402,9 +354,6 @@
       "clerk": "Josh Ashley",
       "phone": "315-393-0489",
       "fax": "315-713-4483",
-      "schedule": [
-        "2nd and 4th Tuesday @ 10:30 AM"
-      ],
       "ada": "Jonathan Rhodes",
       "ori": "NY044141J",
       "ccd": "4465",
@@ -431,9 +380,6 @@
       "clerk": "Christina Barber",
       "phone": "315-764-1424",
       "fax": "315-764-0629",
-      "schedule": [
-        "1st and 2nd Wednesday @ 5:30 PM"
-      ],
       "notes": "No 5th Wednesday",
       "ada": "Dominik Maida",
       "ori": "NY044091J",
@@ -462,9 +408,6 @@
       "clerk": "Irma Ashley",
       "phone": "315-578-2212",
       "fax": "315-578-2233",
-      "schedule": [
-        "2nd Thursday @ 7:00 PM"
-      ],
       "ada": "Dillion Bullard",
       "ori": "NY044461J",
       "ccd": "4467",
@@ -486,9 +429,6 @@
       "clerk": "Kerri O'Bryan",
       "phone": "315-528-3399",
       "fax": "315-322-0324",
-      "schedule": [
-        "2nd and 4th Tuesday @ 5:00 PM"
-      ],
       "ada": "Dillion Bullard",
       "ori": "NY044271J",
       "ccd": "4468",
@@ -511,10 +451,6 @@
       "clerk": "Christina Barber",
       "phone": "315-769-5431",
       "fax": "315-705-0938",
-      "schedule": [
-        "2nd and 4th Tuesday @ 1:30 PM",
-        "2nd and 4th Wednesday @ 1:30 PM"
-      ],
       "ada": "Michael Abbruzzese (Tue) / Alex Nichols (Wed)",
       "ori": "NY044241J",
       "ccd": "4469",
@@ -542,9 +478,6 @@
       "clerk": "Carol Woodcock",
       "phone": "315-375-4148",
       "fax": "315-375-6385",
-      "schedule": [
-        "1st and 3rd Monday @ 1:00 PM"
-      ],
       "ada": "Dillion Bullard",
       "ori": "NY044291J",
       "ccd": "4470",
@@ -568,10 +501,6 @@
       "clerk": "Carol Tuttle",
       "phone": "315-384-4721",
       "fax": "315-384-3201",
-      "schedule": [
-        "Mondays @ 9:00 AM (no 5th)",
-        "Criminal: 3rd and 4th Monday @ 9:00 AM"
-      ],
       "ada": "Jonathan Rhodes",
       "ori": "NY044111J",
       "ccd": "4471",
@@ -599,11 +528,6 @@
       "clerk": "Natalie Spilman / Cathy Bentley / Nicole Thornhill",
       "phone": "315-393-3941",
       "fax": "315-393-6839",
-      "schedule": [
-        "V&T: 1st and 3rd Thursday @ 9:00 AM",
-        "Drug: 1st and 3rd Monday @ 12:30 PM",
-        "Criminal: Every Tuesday @ 9:00 AM"
-      ],
       "ada": "Josh Haberkornhalm / Matthew Peabody",
       "ori": "NY044011J",
       "ccd": "4401",
@@ -630,9 +554,6 @@
       "clerk": "Macy Norman",
       "phone": "315-344-7284",
       "fax": "315-344-7963",
-      "schedule": [
-        "1st Wednesday @ 3:30 PM"
-      ],
       "ada": "Josh Haberkornhalm",
       "ori": "NY044021J",
       "ccd": "4472",
@@ -655,9 +576,6 @@
       "clerk": "Lori Hayes",
       "phone": "315-265-2131",
       "fax": "315-265-2132",
-      "schedule": [
-        "1st and 3rd Tuesday @ 2:00 PM"
-      ],
       "ada": "Summer Scovil",
       "ori": "NY044131J",
       "ccd": "4473",
@@ -680,9 +598,6 @@
       "clerk": "Sherri Snyder",
       "phone": "518-359-2237",
       "fax": "518-554-1030",
-      "schedule": [
-        "1st and 3rd Tuesday @ 5:00 PM"
-      ],
       "ada": "Summer Scovil (upon request)",
       "ori": "NY044591J",
       "ccd": "4474",
@@ -704,9 +619,6 @@
       "clerk": "Laurie Hance",
       "phone": "315-379-0415",
       "fax": "315-728-7526",
-      "schedule": [
-        "1st and 3rd Tuesday @ 4:00 PM"
-      ],
       "ada": "Alex Nichols",
       "ori": "NY044071J",
       "ccd": "4475",
@@ -728,9 +640,6 @@
       "clerk": "",
       "phone": "315-543-2111",
       "fax": "315-543-9577",
-      "schedule": [
-        "1st and 3rd Thursday @ 7:00 PM"
-      ],
       "ada": "Summer Scovil",
       "ori": "NY044081J",
       "ccd": "4476",
@@ -752,10 +661,6 @@
       "clerk": "Sherri Snyder / Peggy Bruso",
       "phone": "315-265-4318",
       "fax": "315-268-0634",
-      "schedule": [
-        "V&T: Wednesday @ 10:00 AM (no 5th)",
-        "PL: Wednesday @ 12:00 PM (no 5th)"
-      ],
       "ada": "Dominick Maida (1st Wed) / Dillion Bullard (2nd Wed)",
       "ori": "NY044321J",
       "ccd": "4477",
@@ -782,9 +687,6 @@
       "clerk": "Rhonda Cazziol",
       "phone": "315-324-5166",
       "fax": "315-324-6870",
-      "schedule": [
-        "1st and 3rd Monday @ 7:00 PM"
-      ],
       "ada": "Summer Scovil",
       "ori": "NY044641J",
       "ccd": "4478",
@@ -807,9 +709,6 @@
       "clerk": "Brenda Hale",
       "phone": "315-347-4824",
       "fax": "315-347-2570",
-      "schedule": [
-        "1st and 3rd Monday @ 6:00 PM"
-      ],
       "ada": "Mike Abbruzzese",
       "ori": "NY044151J",
       "ccd": "4479",
@@ -831,9 +730,6 @@
       "clerk": "Heather Kish",
       "phone": "315-262-8061 ext. 101",
       "fax": "315-671-2828",
-      "schedule": [
-        "1st and 3rd Wednesday @ 4:00 PM"
-      ],
       "ada": "Mike Abbruzzese",
       "ori": "NY044101J",
       "ccd": "4480",
@@ -853,9 +749,6 @@
       "clerk": "Kerri O'Bryan",
       "phone": "315-388-5629",
       "fax": "315-388-5957",
-      "schedule": [
-        "1st and 3rd Wednesday @ 6:00 PM"
-      ],
       "ada": "Summer Scovil",
       "ori": "NY044361J",
       "ccd": "4481",
@@ -877,9 +770,6 @@
       "clerk": "",
       "phone": "518-358-9968",
       "fax": "518-358-9892",
-      "schedule": [
-        "Tuesdays @ 3:00 PM"
-      ],
       "notes": "Franklin County \u2013 Other Courts",
       "ada": "Franklin County ADA",
       "ori": "",
