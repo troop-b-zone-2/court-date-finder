@@ -84,7 +84,7 @@
     <header>
       <div class="badge-row">
         <span class="nysp-badge">NYSP</span>
-        <span class="nysp-badge">Troop B · Zone 2</span>
+        <span class="nysp-badge">Troop B</span>
         <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle day/night mode" title="Day / Night">◐</button>
       </div>
       <h1>Court Directory</h1>
@@ -179,7 +179,12 @@
         .toLowerCase();
 
       let h = '<div class="court-card" data-search="' + esc(searchBits) + '">';
-      h += "<h2>" + esc(c.name) + "</h2><div class=\"court-grid\">";
+      let subtitle = [];
+      if (c.county) subtitle.push(esc(c.county));
+      if (c.dataDate) subtitle.push("data " + esc(c.dataDate));
+      h += "<h2>" + esc(c.name) + "</h2>";
+      if (subtitle.length) h += '<div class="court-notes" style="margin-top:-6px;margin-bottom:8px">' + subtitle.join(" · ") + "</div>";
+      h += "<div class=\"court-grid\">";
 
       if (c.address && c.address.length) {
         h += '<div><div class="field-label">Address</div><div class="field-value">' +

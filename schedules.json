@@ -1,21 +1,21 @@
 {
   "about": {
-    "title": "Troop B Zone 2 \u2013 Court Schedules",
-    "lastUpdated": "August 9, 2026",
-    "source": "Troop B Zone 2 Court Cheat Sheet (dated 02/20/2026) + station post map",
+    "title": "Troop B Court Date Schedules (multi-county)",
+    "lastUpdated": "August 11, 2026",
     "howToReadThisFile": [
-      "This file lists every court used by Troop B Zone 2 stations.",
-      "Each station has a list of towns/courts it covers.",
-      "Under each court, 'meets' shows the day(s) and time the court is in session.",
-      "Some towns appear under more than one station because the area is shared.",
-      "Ogdensburg and Norfolk have separate entries for different types of court (V&T, Drug, Criminal).",
-      "To update a schedule: find the court name, change the 'when' or 'time' text, and save the file.",
-      "Examples of 'when' text: '1st and 3rd Monday', 'Every Tuesday', '2nd and 4th Thursday'."
+      "Each area is either a St. Lawrence SP station or a full county.",
+      "dataDate shows when the source paper was dated or revised.",
+      "meets uses plain English: '1st and 3rd Monday', 'Every Tuesday', etc.",
+      "Some courts appear under more than one area if they sit on a border."
     ]
   },
-  "stations": [
+  "areas": [
     {
+      "id": "sp-ogdensburg-225---226",
       "name": "SP Ogdensburg (225 / 226)",
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026",
+      "source": "Troop B Zone 2 Court Cheat Sheet (02/20/2026) + station post map",
       "courts": [
         {
           "name": "DePeyster",
@@ -123,7 +123,11 @@
       ]
     },
     {
+      "id": "sp-gouverneur-222---220---227",
       "name": "SP Gouverneur (222 / 220 / 227)",
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026",
+      "source": "Troop B Zone 2 Court Cheat Sheet (02/20/2026) + station post map",
       "courts": [
         {
           "name": "Clare",
@@ -280,7 +284,11 @@
       ]
     },
     {
+      "id": "sp-canton-223---224",
       "name": "SP Canton (223 / 224)",
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026",
+      "source": "Troop B Zone 2 Court Cheat Sheet (02/20/2026) + station post map",
       "courts": [
         {
           "name": "Canton",
@@ -356,7 +364,11 @@
       ]
     },
     {
+      "id": "sp-massena-230---231---227---228",
       "name": "SP Massena (230 / 231 / 227 / 228)",
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026",
+      "source": "Troop B Zone 2 Court Cheat Sheet (02/20/2026) + station post map",
       "courts": [
         {
           "name": "Brasher",
@@ -452,6 +464,559 @@
             {
               "when": "1st and 3rd Wednesday",
               "time": "6:00 PM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "franklin-county",
+      "name": "Franklin County",
+      "county": "Franklin",
+      "dataDate": "01/09/2022 (Malone sheet); parts updated 08/02/2024 (Ray Brook sheet)",
+      "source": "2022 NYSP Malone Court Dates (rev 1/9/22) + SP Ray Brook Court Info (08/02/2024)",
+      "courts": [
+        {
+          "name": "Bangor",
+          "meets": [
+            {
+              "when": "Every Wednesday",
+              "time": "4:00 PM"
+            },
+            {
+              "when": "4th Wednesday",
+              "time": "PL session"
+            }
+          ],
+          "notes": "VTL every Wed 4 PM / PL 4th Wed. No court dates listed on sheet for some 2022 dates."
+        },
+        {
+          "name": "Bellmont",
+          "meets": [
+            {
+              "when": "2nd and 4th Monday",
+              "time": "7:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Bombay",
+          "meets": [
+            {
+              "when": "Every Tuesday",
+              "time": "3:00 PM"
+            }
+          ],
+          "notes": "UTTs 3 PM (Malone sheet). Also listed under St. Lawrence border area."
+        },
+        {
+          "name": "Brandon",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Burke",
+          "meets": [
+            {
+              "when": "4th Wednesday",
+              "time": "4:00 PM \u2013 6:00 PM"
+            },
+            {
+              "when": "2nd Wednesday",
+              "time": "3:00 PM"
+            }
+          ],
+          "notes": "VTL 4th Wed 4-6 PM / PL 2nd Wed 3 PM"
+        },
+        {
+          "name": "Chateaugay",
+          "meets": [
+            {
+              "when": "Every Monday",
+              "time": "6:00 PM"
+            }
+          ],
+          "notes": "PL 6 PM (UTTs 5:30 PM). No court 2/7 or 2/21 noted on sheet."
+        },
+        {
+          "name": "Constable",
+          "meets": [
+            {
+              "when": "1st and 3rd Wednesday",
+              "time": "6:30 PM"
+            }
+          ]
+        },
+        {
+          "name": "Dickinson",
+          "meets": [
+            {
+              "when": "Alternate Wednesdays",
+              "time": "7:00 PM"
+            }
+          ],
+          "notes": "Specific 2022 dates listed on Malone sheet"
+        },
+        {
+          "name": "Duane",
+          "meets": [
+            {
+              "when": "1st and 3rd Thursday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Fort Covington",
+          "meets": [
+            {
+              "when": "Every Tuesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Malone",
+          "meets": [
+            {
+              "when": "Every Thursday",
+              "time": "4:00 PM"
+            }
+          ],
+          "notes": "VTL & PL 4 PM"
+        },
+        {
+          "name": "Moira",
+          "meets": [
+            {
+              "when": "Every Monday",
+              "time": "2:30 PM or 4:00 PM"
+            }
+          ],
+          "notes": "Durant 2:30 PM or McCormick 4 PM; no-court dates on sheet"
+        },
+        {
+          "name": "Santa Clara",
+          "meets": [
+            {
+              "when": "2nd and 4th Wednesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Waverly",
+          "meets": [
+            {
+              "when": "Alternate Tuesdays",
+              "time": "7:00 PM"
+            }
+          ],
+          "notes": "Specific dates listed on Malone sheet"
+        },
+        {
+          "name": "Westville",
+          "meets": [
+            {
+              "when": "3rd Wednesday",
+              "time": "5:00 PM"
+            },
+            {
+              "when": "1st Wednesday",
+              "time": "5:00 PM"
+            }
+          ],
+          "notes": "VTL 3rd Wed 5 PM / PL 1st Wed 5 PM"
+        },
+        {
+          "name": "Harrietstown",
+          "meets": [
+            {
+              "when": "Every Monday",
+              "time": "3:00 PM"
+            }
+          ],
+          "notes": "Malone sheet; Ray Brook also has MON V/T 10 AM / CRIM 11 AM variants"
+        },
+        {
+          "name": "Brighton",
+          "meets": [
+            {
+              "when": "Every Monday",
+              "time": "7:00 PM"
+            }
+          ],
+          "notes": "From Ray Brook sheet 08/02/2024"
+        },
+        {
+          "name": "Franklin (Town)",
+          "meets": [
+            {
+              "when": "Every Thursday",
+              "time": "6:00 PM"
+            }
+          ],
+          "notes": "From Ray Brook sheet 08/02/2024"
+        },
+        {
+          "name": "Tupper Lake (Town)",
+          "meets": [
+            {
+              "when": "Every Wednesday",
+              "time": "4:00 PM"
+            }
+          ],
+          "notes": "From Ray Brook sheet 08/02/2024"
+        },
+        {
+          "name": "Tupper Lake (Village)",
+          "meets": [
+            {
+              "when": "Every Monday",
+              "time": "4:00 PM"
+            }
+          ],
+          "notes": "From Ray Brook sheet 08/02/2024"
+        }
+      ]
+    },
+    {
+      "id": "essex-county",
+      "name": "Essex County",
+      "county": "Essex",
+      "dataDate": "08/02/2024",
+      "source": "SP Ray Brook Court Info (updated 08/02/2024)",
+      "courts": [
+        {
+          "name": "Jay",
+          "meets": [
+            {
+              "when": "1st, 2nd and 3rd Monday",
+              "time": "5:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Keene",
+          "meets": [
+            {
+              "when": "Every Monday",
+              "time": "4:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Lake Placid",
+          "meets": [
+            {
+              "when": "1st and 3rd Thursday",
+              "time": "9:00 AM"
+            }
+          ]
+        },
+        {
+          "name": "Newcomb",
+          "meets": [
+            {
+              "when": "3rd Monday",
+              "time": "3:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "North Elba",
+          "meets": [
+            {
+              "when": "Every Tuesday",
+              "time": "10:00 AM"
+            }
+          ]
+        },
+        {
+          "name": "Saint Armand",
+          "meets": [
+            {
+              "when": "Every Friday",
+              "time": "10:00 AM"
+            }
+          ]
+        },
+        {
+          "name": "Wilmington",
+          "meets": [
+            {
+              "when": "Every Thursday",
+              "time": "5:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Long Lake",
+          "meets": [
+            {
+              "when": "1st, 2nd, 3rd and 4th Thursday",
+              "time": "7:00 \u2013 8:00 PM"
+            }
+          ],
+          "notes": "Edelstein 1st/2nd/3rd/4th; Farr 2nd/4th \u2013 Ray Brook sheet"
+        }
+      ]
+    },
+    {
+      "id": "hamilton-county",
+      "name": "Hamilton County",
+      "county": "Hamilton",
+      "dataDate": "08/02/2024",
+      "source": "SP Ray Brook Court Info (updated 08/02/2024)",
+      "courts": [
+        {
+          "name": "Indian Lake",
+          "meets": [
+            {
+              "when": "4th Thursday",
+              "time": "5:00 PM"
+            }
+          ],
+          "notes": "PL and UTT MISD; 2nd Tues 5 PM UTTs also noted"
+        },
+        {
+          "name": "Inlet",
+          "meets": [
+            {
+              "when": "Every Tuesday",
+              "time": "5:00 PM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clinton-county",
+      "name": "Clinton County",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "source": "Clinton County court list (Revised 01/08/2022)",
+      "courts": [
+        {
+          "name": "Altona",
+          "meets": [
+            {
+              "when": "First four Tuesdays of each month",
+              "time": "5:30 PM"
+            }
+          ]
+        },
+        {
+          "name": "Champlain",
+          "meets": [
+            {
+              "when": "Every Wednesday",
+              "time": "2:00 PM"
+            },
+            {
+              "when": "Every Thursday",
+              "time": "2:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Chazy",
+          "meets": [
+            {
+              "when": "1st Tuesday",
+              "time": "5:30 PM"
+            },
+            {
+              "when": "2nd Tuesday",
+              "time": "5:30 PM"
+            }
+          ],
+          "notes": "1st Tue V&T/Criminal 5:30; 2nd Tue PL 5:30"
+        },
+        {
+          "name": "Clinton (Town)",
+          "meets": [
+            {
+              "when": "1st and 3rd Tuesday",
+              "time": "4:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Ellenburg",
+          "meets": [
+            {
+              "when": "1st Monday",
+              "time": "6:00 PM"
+            },
+            {
+              "when": "3rd Thursday",
+              "time": "6:00 PM"
+            }
+          ],
+          "notes": "1st Mon Penal 6 PM; 3rd Thu V&T 6 PM; also 1st Thu of month 6 PM noted"
+        },
+        {
+          "name": "Mooers",
+          "meets": [
+            {
+              "when": "Alternate Thursdays",
+              "time": "4:00 PM"
+            },
+            {
+              "when": "Alternate Thursdays",
+              "time": "6:00 PM"
+            }
+          ],
+          "notes": "Criminal 4 PM / V&T 6 PM alternate Thursdays"
+        },
+        {
+          "name": "Ausable",
+          "meets": [
+            {
+              "when": "Every Friday",
+              "time": "10:00 AM"
+            },
+            {
+              "when": "Every Wednesday",
+              "time": "4:00 PM"
+            }
+          ],
+          "notes": "Fri 10 AM V&T first then criminal; Wed 4 PM"
+        },
+        {
+          "name": "Beekmantown",
+          "meets": [
+            {
+              "when": "Every Wednesday",
+              "time": "5:00 PM"
+            }
+          ],
+          "notes": "1st 2 Weds Crim incl V&T Crim; 2nd 2 Weds V&T"
+        },
+        {
+          "name": "Black Brook",
+          "meets": [
+            {
+              "when": "Every Wednesday",
+              "time": "3:00 PM"
+            },
+            {
+              "when": "Every Wednesday",
+              "time": "4:00 PM"
+            }
+          ],
+          "notes": "Crim 3 PM, V&T 4 PM"
+        },
+        {
+          "name": "Chesterfield",
+          "meets": [
+            {
+              "when": "Every Monday",
+              "time": "10:00 AM"
+            },
+            {
+              "when": "Every Tuesday",
+              "time": "6:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Dannemora (Town)",
+          "meets": [
+            {
+              "when": "2nd and 4th Monday",
+              "time": "3:00 PM"
+            }
+          ]
+        },
+        {
+          "name": "Dannemora (Village)",
+          "meets": [
+            {
+              "when": "1st and 3rd Monday",
+              "time": "10:00 AM"
+            }
+          ]
+        },
+        {
+          "name": "Peru",
+          "meets": [
+            {
+              "when": "Alternate Tuesdays",
+              "time": "2:00 PM"
+            },
+            {
+              "when": "Alternate Tuesdays",
+              "time": "6:00 PM"
+            }
+          ],
+          "notes": "Crim & Crim V&T 2 PM / V&T 6 PM"
+        },
+        {
+          "name": "Plattsburgh (Town)",
+          "meets": [
+            {
+              "when": "Every Tuesday",
+              "time": "4:00 PM"
+            },
+            {
+              "when": "Every Tuesday",
+              "time": "6:00 PM"
+            },
+            {
+              "when": "Every Thursday",
+              "time": "4:00 PM"
+            },
+            {
+              "when": "Every Thursday",
+              "time": "6:00 PM"
+            }
+          ],
+          "notes": "Tue Crim 4 / V&T 6; Thu Crim 4 / V&T 6"
+        },
+        {
+          "name": "Plattsburgh (City)",
+          "meets": [
+            {
+              "when": "Monday\u2013Thursday",
+              "time": "8:30 AM"
+            },
+            {
+              "when": "Monday\u2013Thursday",
+              "time": "9:45 AM"
+            },
+            {
+              "when": "Monday\u2013Thursday",
+              "time": "10:30 AM"
+            }
+          ],
+          "notes": "V&T crimes + penal 8:30; violations 9:45; V&T 10:30 \u2013 sheet Revised 01/08/2022"
+        },
+        {
+          "name": "Saranac",
+          "meets": [
+            {
+              "when": "Alternate Mondays",
+              "time": "4:30 PM"
+            }
+          ],
+          "notes": "2nd plt / 1st plt variants on sheet"
+        },
+        {
+          "name": "Schuyler Falls",
+          "meets": [
+            {
+              "when": "Every Wednesday",
+              "time": "3:00 PM"
+            },
+            {
+              "when": "Every Thursday",
+              "time": "3:00 PM"
             }
           ]
         }

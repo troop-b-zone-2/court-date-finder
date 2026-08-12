@@ -1,0 +1,25 @@
+{
+  "about": {
+    "title": "Custom court exclusion dates",
+    "howToUse": [
+      "Add one object per cancelled or non-session date.",
+      "court: exact court name as it appears in schedules.json (e.g. \"Canton\", \"Malone\").",
+      "date: YYYY-MM-DD format.",
+      "reason: optional note (holiday week, judge conference, etc.).",
+      "If court is \"*\" the date is excluded for ALL courts.",
+      "Leave the examples in place or delete them after you add real dates."
+    ]
+  },
+  "exclusions": [
+    {
+      "court": "Example Town",
+      "date": "2026-12-24",
+      "reason": "EXAMPLE \u2013 court closed day before Christmas. Delete this entry."
+    },
+    {
+      "court": "*",
+      "date": "2026-11-27",
+      "reason": "EXAMPLE \u2013 day after Thanksgiving often closed county-wide. Delete if not needed."
+    }
+  ]
+}

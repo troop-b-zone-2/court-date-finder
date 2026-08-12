@@ -82,11 +82,11 @@
     <header>
       <div class="badge-row">
         <span class="nysp-badge">NYSP</span>
-        <span class="nysp-badge">Troop B · Zone 2</span>
+        <span class="nysp-badge">Troop B</span>
         <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle day/night mode" title="Day / Night">◐</button>
       </div>
       <h1>Court Schedules</h1>
-      <p>Days and times by station</p>
+      <p>Days and times by area / county</p>
     </header>
 
     <a class="back-link" href="index.html">← Court Date Finder</a>
@@ -121,16 +121,21 @@
         return;
       }
 
-      const stations = data.stations || [];
-      if (!stations.length) {
-        content.textContent = "No stations found.";
+      const areas = data.areas || data.stations || [];
+      if (!areas.length) {
+        content.textContent = "No areas found.";
         return;
       }
 
       let html = "";
-      for (const station of stations) {
+      for (const station of areas) {
         html += '<div class="station-block">';
-        html += "<h2>" + escapeHtml(station.name) + "</h2>";
+        let title = escapeHtml(station.name);
+        if (station.dataDate) title += ' <span style="font-weight:400;font-size:0.85rem;color:var(--muted)">(data ' + escapeHtml(String(station.dataDate).split(";")[0].trim()) + ')</span>';
+        html += "<h2>" + title + "</h2>";
+        if (station.source) {
+          html += '<div class="court-notes" style="margin-bottom:10px">' + escapeHtml(station.source) + "</div>";
+        }
 
         for (const court of station.courts || []) {
           html += '<div class="court-row">';

@@ -1,8 +1,9 @@
 {
   "about": {
-    "title": "St. Lawrence County Local Criminal Court Directory",
-    "lastUpdated": "February 20, 2026",
-    "source": "ST. LAWRENCE COUNTY LOCAL CRIMINAL COURT JUDGES AND COURT DATE & TIME AS OF 02/20/2026"
+    "title": "Troop B multi-county court directory",
+    "lastUpdated": "August 11, 2026",
+    "source": "St. Lawrence 02/20/2026 sheets; Malone 01/09/2022; Ray Brook 08/02/2024; Clinton 01/08/2022",
+    "note": "Schedules come from schedules.json. This file holds addresses, clerks, judges, phones."
   },
   "courts": [
     {
@@ -25,7 +26,9 @@
           "home": "315-389-5804",
           "email": "jlburns@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Canton",
@@ -52,7 +55,9 @@
           "home": "315-212-4440",
           "email": "rlfoster@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Clare",
@@ -74,7 +79,9 @@
           "work": "315-481-7895",
           "email": "ffinley@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Clifton",
@@ -97,7 +104,9 @@
           "home": "315-681-2127",
           "email": "jdragun@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Colton",
@@ -120,7 +129,9 @@
           "home": "315-384-2091",
           "email": "ggrubee@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "DeKalb",
@@ -142,7 +153,9 @@
           "home": "315-344-7087",
           "email": "hputney@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "DePeyster",
@@ -165,7 +178,9 @@
           "cell": "315-528-1781",
           "email": "bhicks@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Edwards",
@@ -188,7 +203,9 @@
           "cell": "315-481-7895",
           "email": "ffinley@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Fine",
@@ -210,7 +227,9 @@
           "home": "315-848-2004",
           "email": "jlatray@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Fowler",
@@ -231,7 +250,9 @@
           "cell": "315-323-3128",
           "email": "tknowlton@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Gouverneur",
@@ -257,7 +278,9 @@
           "cell": "315-486-4502",
           "email": "fscozzafava@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Hammond",
@@ -279,7 +302,9 @@
           "cell": "315-783-1491",
           "email": "rcazziol@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Hermon",
@@ -301,7 +326,9 @@
           "cell": "315-854-1122",
           "email": "chrisvelez@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Hopkinton",
@@ -322,7 +349,9 @@
           "cell": "315-212-2091",
           "email": "sbory@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Lawrence",
@@ -343,7 +372,9 @@
           "cell": "518-832-0366",
           "email": "mlhastings@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Lisbon",
@@ -369,7 +400,9 @@
           "cell": "315-528-8000",
           "email": "atburns@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Louisville",
@@ -397,7 +430,9 @@
           "cell": "315-250-7795",
           "email": "jareynolds@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Macomb",
@@ -418,7 +453,9 @@
           "cell": "315-229-2159",
           "email": "swburke@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Madrid",
@@ -440,7 +477,9 @@
           "cell": "315-323-8548",
           "email": "ersharpe@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Massena",
@@ -466,7 +505,9 @@
           "cell": "315-842-8234",
           "email": "esharlow@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Morristown",
@@ -489,7 +530,9 @@
           "cell": "315-322-1024",
           "email": "jphillips@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Norfolk",
@@ -517,7 +560,9 @@
           "cell": "315-244-2436",
           "email": "dcstevenson@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Ogdensburg",
@@ -543,7 +588,9 @@
           "cell": "315-528-4694",
           "email": "mlemay@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Oswegatchie / Heuvelton",
@@ -564,7 +611,9 @@
           "cell": "315-408-8444",
           "email": "mdenner@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Parishville",
@@ -586,7 +635,9 @@
           "home": "757-651-5276",
           "email": "fsisto@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Piercefield",
@@ -608,7 +659,9 @@
           "home": "518-354-1500",
           "email": "jkopp@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Pierrepont",
@@ -629,7 +682,9 @@
           "cell": "315-523-0855",
           "email": "dmanor@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Pitcairn",
@@ -650,7 +705,9 @@
           "cell": "315-804-7948",
           "email": "rbearor@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Potsdam",
@@ -676,7 +733,9 @@
           "cell": "315-323-1218",
           "email": "dhaggard@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Rossie",
@@ -697,7 +756,9 @@
           "cell": "315-778-6815",
           "email": "mphalen@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Russell",
@@ -719,7 +780,9 @@
           "cell": "315-244-8226",
           "email": "mdumoulin@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Stockholm",
@@ -738,7 +801,9 @@
         {
           "name": "VACANT"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Waddington",
@@ -759,7 +824,9 @@
           "cell": "315-244-9539",
           "email": "kjclark@nycourts.gov"
         }
-      ]
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
     },
     {
       "name": "Bombay",
@@ -784,6 +851,843 @@
         {
           "name": "Terry Durant",
           "cell": "518-521-0786"
+        }
+      ],
+      "county": "St. Lawrence",
+      "dataDate": "02/20/2026"
+    },
+    {
+      "name": "Bangor",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "438 ST RT 11 Comm Ctr",
+        "North Bangor, NY"
+      ],
+      "clerk": "Heidi Foley",
+      "phone": "483-2749",
+      "fax": "483-4895",
+      "judges": [
+        {
+          "name": "James Sorrell",
+          "email": "jsorrell@nycourts.gov",
+          "home": "232-5423"
+        }
+      ]
+    },
+    {
+      "name": "Bellmont",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "9 Hill Street (Off CR 24)",
+        "PO Box 9"
+      ],
+      "phone": "425-3461",
+      "fax": "425-6170",
+      "judges": [
+        {
+          "name": "Glenda King",
+          "email": "gjking@nycourts.gov",
+          "home": "425-3546",
+          "cell": "651-0235"
+        }
+      ]
+    },
+    {
+      "name": "Brandon",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "564 CR 12",
+        "No. Bangor 12966 T/Hall"
+      ],
+      "phone": "483-4701",
+      "judges": [
+        {
+          "name": "Emily Marshall",
+          "home": "317-7070",
+          "cell": "651-7569"
+        }
+      ]
+    },
+    {
+      "name": "Burke",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "5165 State Route 11"
+      ],
+      "clerk": "Lynn Trudell",
+      "fax": "483-5497",
+      "judges": [
+        {
+          "name": "Lorelie Miller",
+          "cell": "651-9560"
+        }
+      ]
+    },
+    {
+      "name": "Chateaugay",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "191 E. Main St",
+        "Chateaugay 12920"
+      ],
+      "phone": "497-3429",
+      "fax": "497-6431",
+      "judges": [
+        {
+          "name": "Marie Cook",
+          "email": "macook@nycourts.gov",
+          "home": "497-3189",
+          "cell": "353-1329"
+        }
+      ]
+    },
+    {
+      "name": "Constable",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "15897 SR 30"
+      ],
+      "phone": "319-4218",
+      "fax": "319-4219",
+      "judges": [
+        {
+          "name": "Diane Wisnesky",
+          "home": "483-5186",
+          "cell": "589-2790"
+        }
+      ]
+    },
+    {
+      "name": "Dickinson",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "339 Akins Rd",
+        "Dickinson 12930"
+      ],
+      "phone": "529-0138",
+      "fax": "529-7247",
+      "judges": [
+        {
+          "name": "Randy N. Farmer",
+          "cell": "856-9291",
+          "email": "rnfarmer@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Duane",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "Fire Dept 172 CR 26",
+        "Malone"
+      ],
+      "phone": "483-0386",
+      "fax": "481-0517",
+      "judges": [
+        {
+          "name": "Eleanor Fallon",
+          "email": "efallon@nycourts.gov",
+          "home": "914-980-3920"
+        }
+      ]
+    },
+    {
+      "name": "Fort Covington",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "2510 Chateaugay Street"
+      ],
+      "phone": "358-4629",
+      "judges": [
+        {
+          "name": "Tony Leroux",
+          "home": "358-9377",
+          "cell": "651-6434"
+        }
+      ]
+    },
+    {
+      "name": "Malone",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "27 Airport Rd",
+        "Malone 12953"
+      ],
+      "phone": "481-6634",
+      "fax": "481-5260",
+      "judges": [
+        {
+          "name": "June Fisher",
+          "cell": "569-5318"
+        },
+        {
+          "name": "Robert Main Jr.",
+          "cell": "651-4928"
+        }
+      ]
+    },
+    {
+      "name": "Moira",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "T/Garage 522 CR 8",
+        "PO Box 111",
+        "12957"
+      ],
+      "clerk": "Heidi Foley",
+      "phone": "529-0208",
+      "fax": "529-7175",
+      "judges": [
+        {
+          "name": "Mark McCormick",
+          "email": "mmccormick@nycourts.gov",
+          "home": "593-3018",
+          "cell": "570-6607"
+        },
+        {
+          "name": "James Durant",
+          "email": "jadurant@nycourts.gov"
+        }
+      ]
+    },
+    {
+      "name": "Santa Clara",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "5367 SR 30",
+        "Saranac Lake 12983"
+      ],
+      "phone": "891-4656",
+      "judges": [
+        {
+          "name": "Michelle Brown Garcia",
+          "home": "891-3905",
+          "cell": "637-1808"
+        }
+      ]
+    },
+    {
+      "name": "Waverly",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "Main St",
+        "St. Regis Falls, NY 12980"
+      ],
+      "phone": "856-9249",
+      "fax": "856-0207",
+      "judges": [
+        {
+          "name": "Hal Fraser",
+          "email": "hfraser@nycourts.gov",
+          "home": "856-9249",
+          "cell": "521-5552"
+        }
+      ]
+    },
+    {
+      "name": "Westville",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "936 CR 19",
+        "Constable 12926"
+      ],
+      "phone": "358-2499",
+      "fax": "358-0036",
+      "judges": [
+        {
+          "name": "Scott Brady",
+          "email": "sbrady1@nycourts.gov",
+          "cell": "521-8753"
+        }
+      ]
+    },
+    {
+      "name": "Harrietstown",
+      "county": "Franklin",
+      "dataDate": "01/09/2022",
+      "address": [
+        "39 Main St",
+        "Saranac Lake 12983"
+      ],
+      "phone": "891-4500",
+      "judges": [
+        {
+          "name": "McLaughlin",
+          "home": "891-4355",
+          "cell": "524-0620"
+        }
+      ]
+    },
+    {
+      "name": "Brighton",
+      "county": "Franklin",
+      "dataDate": "08/02/2024",
+      "address": [
+        "T/Hall, Easy St",
+        "Paul Smiths 12970"
+      ],
+      "phone": "518-327-3202",
+      "fax": "518-327-5387",
+      "judges": [
+        {
+          "name": "Russ DeFonce",
+          "home": "518-424-0371"
+        }
+      ]
+    },
+    {
+      "name": "Franklin (Town)",
+      "county": "Franklin",
+      "dataDate": "08/02/2024",
+      "address": [
+        "POB 62, 7 Cold Brook Rd",
+        "Vermontville 12989"
+      ],
+      "phone": "518-891-2189",
+      "fax": "518-891-6389",
+      "judges": [
+        {
+          "name": "Roger Symonds",
+          "home": "518-891-3989"
+        }
+      ]
+    },
+    {
+      "name": "Tupper Lake (Town)",
+      "county": "Franklin",
+      "dataDate": "08/02/2024",
+      "address": [
+        "120 Demars Blvd",
+        "Tupper Lake 12986"
+      ],
+      "phone": "518-359-9261",
+      "fax": "518-359-3495",
+      "judges": [
+        {
+          "name": "Leonard Young",
+          "home": "518-359-9016",
+          "cell": "518-728-9713"
+        }
+      ]
+    },
+    {
+      "name": "Tupper Lake (Village)",
+      "county": "Franklin",
+      "dataDate": "08/02/2024",
+      "address": [
+        "53 Park St",
+        "Tupper Lake 12986"
+      ],
+      "phone": "518-359-9161",
+      "judges": [
+        {
+          "name": "Chris DeLair",
+          "home": "518-637-5007"
+        }
+      ]
+    },
+    {
+      "name": "Jay",
+      "county": "Essex",
+      "dataDate": "08/02/2024",
+      "address": [
+        "POB 64, 24 School St",
+        "AuSable Forks 12912"
+      ],
+      "phone": "518-647-2204",
+      "fax": "518-647-5257",
+      "judges": [
+        {
+          "name": "Patrick Devlin",
+          "home": "518-593-3306"
+        }
+      ]
+    },
+    {
+      "name": "Keene",
+      "county": "Essex",
+      "dataDate": "08/02/2024",
+      "address": [
+        "POB 89, 10892 Rt 9N",
+        "Keene 12942"
+      ],
+      "phone": "518-576-4556",
+      "fax": "518-576-4676",
+      "judges": [
+        {
+          "name": "Barb Dwyer",
+          "home": "518-524-3209"
+        },
+        {
+          "name": "Henrietta Jordan",
+          "home": "518-576-5796"
+        }
+      ]
+    },
+    {
+      "name": "Lake Placid",
+      "county": "Essex",
+      "dataDate": "08/02/2024",
+      "address": [
+        "2693 Main St, Ste 103",
+        "Lake Placid 12946"
+      ],
+      "phone": "518-523-2004",
+      "fax": "518-523-7278",
+      "judges": [
+        {
+          "name": "Dean Dietrich",
+          "home": "518-524-4263"
+        }
+      ]
+    },
+    {
+      "name": "Newcomb",
+      "county": "Essex",
+      "dataDate": "08/02/2024",
+      "address": [
+        "POB 85, 5639 NYS Rt 28N",
+        "Newcomb 12852"
+      ],
+      "phone": "518-582-4255",
+      "fax": "518-582-2061",
+      "judges": [
+        {
+          "name": "Bob Ward",
+          "home": "518-582-2365"
+        }
+      ]
+    },
+    {
+      "name": "North Elba",
+      "county": "Essex",
+      "dataDate": "08/02/2024",
+      "address": [
+        "2693 Main St",
+        "Lake Placid 12946"
+      ],
+      "phone": "518-523-2141",
+      "fax": "518-523-8146",
+      "judges": [
+        {
+          "name": "Dean Dietrich",
+          "home": "518-524-4263"
+        }
+      ]
+    },
+    {
+      "name": "Saint Armand",
+      "county": "Essex",
+      "dataDate": "08/02/2024",
+      "address": [
+        "POB 66, 1702 NYS Rt 3",
+        "Bloomingdale 12913"
+      ],
+      "phone": "518-891-3189",
+      "fax": "518-891-6092",
+      "judges": [
+        {
+          "name": "Frank Whitelaw",
+          "home": "518-524-2093"
+        }
+      ]
+    },
+    {
+      "name": "Wilmington",
+      "county": "Essex",
+      "dataDate": "08/02/2024",
+      "address": [
+        "POB 180, 7 Community Cir",
+        "Wilmington 12997"
+      ],
+      "phone": "518-946-7129",
+      "fax": "518-946-7124",
+      "judges": [
+        {
+          "name": "Mike Goddeau",
+          "home": "518-524-7812"
+        },
+        {
+          "name": "Hope Smith-Holzer",
+          "home": "518-524-8485"
+        }
+      ]
+    },
+    {
+      "name": "Long Lake",
+      "county": "Essex",
+      "dataDate": "08/02/2024",
+      "address": [
+        "T/Hall Po Box 697",
+        "Long Lake 12847"
+      ],
+      "phone": "518-624-3791",
+      "judges": [
+        {
+          "name": "Edelstein",
+          "home": "518-354-5810"
+        },
+        {
+          "name": "B. Farr",
+          "home": "518-624-3892"
+        }
+      ]
+    },
+    {
+      "name": "Indian Lake",
+      "county": "Hamilton",
+      "dataDate": "08/02/2024",
+      "address": [
+        "Po Box 730, Pelon Rd",
+        "Indian Lake 12842"
+      ],
+      "phone": "518-648-6226",
+      "fax": "518-648-5899",
+      "judges": [
+        {
+          "name": "Nancy E. Brown Jr."
+        }
+      ]
+    },
+    {
+      "name": "Inlet",
+      "county": "Hamilton",
+      "dataDate": "08/02/2024",
+      "address": [
+        "T/Hall, 160 State Route 28",
+        "Inlet 13360"
+      ],
+      "phone": "315-357-6121",
+      "fax": "315-357-6266",
+      "clerk": "315-357-5901",
+      "judges": [
+        {
+          "name": "Tera Arey",
+          "home": "315-357-6121"
+        },
+        {
+          "name": "Georgia Levi"
+        }
+      ]
+    },
+    {
+      "name": "Altona",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "3124 Miner Farm Rd",
+        "Altona, NY 12910"
+      ],
+      "phone": "236-7035",
+      "fax": "236-5014",
+      "judges": [
+        {
+          "name": "Chad A. Rivers"
+        }
+      ]
+    },
+    {
+      "name": "Champlain",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "PO Box 3144, 729 SR-9",
+        "Champlain, NY 12919"
+      ],
+      "phone": "298-8160",
+      "fax": "298-4090",
+      "judges": [
+        {
+          "name": "John J. Labonte"
+        },
+        {
+          "name": "John K. Triller"
+        }
+      ]
+    },
+    {
+      "name": "Chazy",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "P.O. Box 219, 9631 SR 9",
+        "Chazy, NY 12921"
+      ],
+      "phone": "846-8600",
+      "fax": "846-3360",
+      "judges": [
+        {
+          "name": "Carolyn Meseck-Pratt"
+        },
+        {
+          "name": "Chris Latremore"
+        }
+      ]
+    },
+    {
+      "name": "Clinton (Town)",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "23 Smith St",
+        "Churubusco 12923"
+      ],
+      "phone": "497-6133",
+      "judges": [
+        {
+          "name": "Bonnie LeClair"
+        }
+      ]
+    },
+    {
+      "name": "Ellenburg",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "PO Box 142, 16 St. Edmunds Way",
+        "Ellenburg 12933"
+      ],
+      "phone": "594-7177",
+      "fax": "594-3100",
+      "judges": [
+        {
+          "name": "Roland Thomas"
+        },
+        {
+          "name": "Kenneth Prevo"
+        }
+      ]
+    },
+    {
+      "name": "Mooers",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "PO Box 403, 2508 RT 11",
+        "Mooers 12958"
+      ],
+      "phone": "236-7927",
+      "fax": "236-6107",
+      "judges": [
+        {
+          "name": "Earl Robinson"
+        },
+        {
+          "name": "David Kokes"
+        }
+      ]
+    },
+    {
+      "name": "Ausable",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "58 Liberty St",
+        "Keeseville 12944"
+      ],
+      "phone": "834-6095",
+      "fax": "834-4638",
+      "judges": [
+        {
+          "name": "Elizabeth Smith"
+        },
+        {
+          "name": "Jeff Kelley"
+        }
+      ]
+    },
+    {
+      "name": "Beekmantown",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "571 Spellman Rd",
+        "West Chazy, NY 12992"
+      ],
+      "phone": "563-9930",
+      "fax": "285-6145",
+      "judges": [
+        {
+          "name": "Russell Lawliss"
+        },
+        {
+          "name": "Brendon Dupree"
+        }
+      ]
+    },
+    {
+      "name": "Black Brook",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "PO Box 715, 18 N. Main St",
+        "AuSable Forks 12912"
+      ],
+      "phone": "647-5411",
+      "fax": "647-1294",
+      "judges": [
+        {
+          "name": "Gary Frenia"
+        }
+      ]
+    },
+    {
+      "name": "Chesterfield",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "PO Box 456, 1 Vine St",
+        "Keeseville 12944"
+      ],
+      "phone": "834-9211",
+      "fax": "834-4673",
+      "judges": [
+        {
+          "name": "David Bashaw"
+        },
+        {
+          "name": "Andrew Russell"
+        }
+      ]
+    },
+    {
+      "name": "Dannemora (Town)",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "78 Higby Rd",
+        "Dannemora 12929"
+      ],
+      "phone": "492-7541",
+      "fax": "471-4700",
+      "judges": [
+        {
+          "name": "Lawrence McGinn III"
+        }
+      ]
+    },
+    {
+      "name": "Dannemora (Village)",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "40 Emmons St",
+        "Dannemora 12929"
+      ],
+      "phone": "492-3046",
+      "fax": "492-7341",
+      "judges": [
+        {
+          "name": "H. Philip Maynard Jr."
+        },
+        {
+          "name": "Karen Waldron (Acting)"
+        }
+      ]
+    },
+    {
+      "name": "Peru",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "PO Box 41, 22 Davey Dr",
+        "Peru 12972"
+      ],
+      "phone": "643-4187",
+      "fax": "643-4188",
+      "judges": [
+        {
+          "name": "James Kirby"
+        },
+        {
+          "name": "Lawrence Cabana"
+        }
+      ]
+    },
+    {
+      "name": "Plattsburgh (Town)",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "151 Banker Rd",
+        "Plattsburgh 12901"
+      ],
+      "phone": "562-6870",
+      "fax": "563-8142",
+      "judges": [
+        {
+          "name": "James D. Joyce"
+        },
+        {
+          "name": "Kristofer S. Michaud"
+        }
+      ]
+    },
+    {
+      "name": "Plattsburgh (City)",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "24 U.S. Oval",
+        "Plattsburgh 12901"
+      ],
+      "phone": "536-3870",
+      "fax": "453-8624",
+      "judges": [
+        {
+          "name": "Tim Blatchley (Alternate)"
+        }
+      ]
+    },
+    {
+      "name": "Saranac",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "PO Box 147, 3668 SR 3",
+        "Saranac 12981"
+      ],
+      "phone": "293-8082",
+      "fax": "293-7706",
+      "judges": [
+        {
+          "name": "Karen Waldron"
+        },
+        {
+          "name": "Perry J. Lawton"
+        }
+      ]
+    },
+    {
+      "name": "Schuyler Falls",
+      "county": "Clinton",
+      "dataDate": "01/08/2022",
+      "address": [
+        "PO Box 99, 997 Mason St",
+        "Morrisonville 12962"
+      ],
+      "phone": "563-1129",
+      "fax": "562-0157",
+      "judges": [
+        {
+          "name": "Philip Van Nortwick"
+        },
+        {
+          "name": "Rhonda Barber"
         }
       ]
     }
