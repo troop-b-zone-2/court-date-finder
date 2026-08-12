@@ -151,8 +151,7 @@
     areasList().forEach(function (a, i) {
       const opt = document.createElement("option");
       opt.value = i;
-      const dateTag = a.dataDate ? " · data " + String(a.dataDate).split(";")[0].trim() : "";
-      opt.textContent = a.name + dateTag;
+      opt.textContent = a.name;
       areaSelect.appendChild(opt);
     });
   }
@@ -261,10 +260,20 @@
   copyBtn.addEventListener("click", function () { if (currentCopyText) autoCopy(currentCopyText); });
   if (minDaysInput) {
     minDaysInput.addEventListener("change", readMinDays);
-    minDaysInput.addEventListener("input", function () {
-      // clamp live but don't recalc until change/blur for less jank
-    });
     minDaysInput.addEventListener("blur", readMinDays);
+  }
+
+  const minDaysToggle = document.getElementById("minDaysToggle");
+  const minDaysPanel = document.getElementById("minDaysPanel");
+  if (minDaysToggle && minDaysPanel) {
+    function applyMinDaysVisibility() {
+      minDaysPanel.style.display = minDaysToggle.checked ? "flex" : "none";
+      if (!minDaysToggle.checked) {
+        // when hidden, keep last value; still applies
+      }
+    }
+    minDaysToggle.addEventListener("change", applyMinDaysVisibility);
+    applyMinDaysVisibility();
   }
 
   async function loadJson(path) {

@@ -39,8 +39,11 @@
     </div>
 
     <div class="card card-compact">
-      <label for="minDaysInput">Minimum days out</label>
-      <div class="row-inline">
+      <div class="row-inline" style="justify-content:space-between;margin-bottom:0">
+        <label for="minDaysToggle" style="margin:0;cursor:pointer">Minimum days out</label>
+        <input type="checkbox" id="minDaysToggle" checked title="Show or hide minimum days setting" />
+      </div>
+      <div id="minDaysPanel" class="row-inline" style="margin-top:8px">
         <input type="number" id="minDaysInput" min="0" max="365" value="30" />
         <span class="hint">0–365 (default 30)</span>
       </div>
