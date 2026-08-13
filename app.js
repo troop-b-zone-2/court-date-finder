@@ -266,14 +266,11 @@
   const minDaysToggle = document.getElementById("minDaysToggle");
   const minDaysPanel = document.getElementById("minDaysPanel");
   if (minDaysToggle && minDaysPanel) {
-    function applyMinDaysVisibility() {
-      minDaysPanel.style.display = minDaysToggle.checked ? "flex" : "none";
-      if (!minDaysToggle.checked) {
-        // when hidden, keep last value; still applies
-      }
-    }
-    minDaysToggle.addEventListener("change", applyMinDaysVisibility);
-    applyMinDaysVisibility();
+    minDaysPanel.style.display = "none";
+    minDaysToggle.addEventListener("click", function () {
+      const open = minDaysPanel.style.display !== "none";
+      minDaysPanel.style.display = open ? "none" : "flex";
+    });
   }
 
   async function loadJson(path) {

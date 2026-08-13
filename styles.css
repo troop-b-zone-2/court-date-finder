@@ -367,3 +367,24 @@ footer {
 header h1 {
   font-size: 1.25rem;
 }
+
+.discrete-settings {
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+.discrete-link {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.72rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 0;
+  opacity: 0.7;
+}
+.discrete-link:hover {
+  color: var(--text);
+  opacity: 1;
+}
