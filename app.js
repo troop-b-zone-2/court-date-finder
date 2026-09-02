@@ -154,19 +154,12 @@
     const now = new Date();
     const events = findSolarEvents(now);
     if (!events.sunrise || !events.sunset) {
-      lightingStatus.textContent = "LIGHTING: UNAVAILABLE";
+      lightingStatus.hidden = true;
       return;
     }
 
     // Legal nighttime period is 30 minutes after sunset through 30 minutes
     // before sunrise. The display adds a 2-minute safety buffer on each side.
-    const operationalNightStart = new Date(
-      events.sunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000
-    );
-    const operationalNightEnd = new Date(
-      events.sunrise.getTime() - OPERATIONAL_LIGHTING_MINUTES * 60000
-    );
-
     const currentOperationalNight =
       (events.previousSunset &&
         now >= new Date(events.previousSunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000)) ||
@@ -175,13 +168,9 @@
     nextSunset.textContent = formatEasternTime(events.sunset);
     nextSunrise.textContent = formatEasternTime(events.sunrise);
 
-    if (currentOperationalNight) {
-      lightingStatus.textContent = "LIGHTING: SAFE TO WRITE TICKETS";
-      lightingStatus.className = "lighting-status night";
-    } else {
-      lightingStatus.textContent = "LIGHTING: DAYTIME";
-      lightingStatus.className = "lighting-status day";
-    }
+    lightingStatus.hidden = !currentOperationalNight;
+    lightingStatus.textContent = "LIGHTS ✓";
+    lightingStatus.className = "lighting-status night";
   }
 
   function startOfDay(d) { const x = new Date(d); x.setHours(0,0,0,0); return x; }
