@@ -19,6 +19,176 @@
   const footerMeta = document.getElementById("footerMeta");
   const minDaysInput = document.getElementById("minDaysInput");
 
+  // St. Lawrence County, NY approximate geographic center.
+  // Solar calculations are performed locally so the feature does not depend on an API key.
+  const LIGHTING_LOCATION = {
+    latitude: 44.50,
+    longitude: -75.00,
+    timeZone: "America/New_York"
+  };
+  const LEGAL_LIGHTING_MINUTES = 30;
+  const SAFETY_BUFFER_MINUTES = 3;
+  const OPERATIONAL_LIGHTING_MINUTES = LEGAL_LIGHTING_MINUTES + SAFETY_BUFFER_MINUTES;
+
+  const lightingStatus = document.getElementById("lightingStatus");
+  const nextSunset = document.getElementById("nextSunset");
+  const nextSunrise = document.getElementById("nextSunrise");
+  const sunsetCutoff = document.getElementById("sunsetCutoff");
+  const sunriseCutoff = document.getElementById("sunriseCutoff");
+  const lightingUpdated = document.getElementById("lightingUpdated");
+
+  function solarPosition(date) {
+    // NOAA solar-position approximation; returns solar altitude in degrees.
+    const start = Date.UTC(date.getUTCFullYear(), 0, 0);
+    const dayOfYear = Math.floor((date.getTime() - start) / 86400000);
+    const hourUTC = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
+    const gamma = 2 * Math.PI / 365 * (dayOfYear - 1 + (hourUTC - 12) / 24);
+
+    const eqTime = 229.18 * (
+      0.000075 +
+      0.001868 * Math.cos(gamma) -
+      0.032077 * Math.sin(gamma) -
+      0.014615 * Math.cos(2 * gamma) -
+      0.040849 * Math.sin(2 * gamma)
+    );
+
+    const decl = (
+      0.006918 -
+      0.399912 * Math.cos(gamma) +
+      0.070257 * Math.sin(gamma) -
+      0.006758 * Math.cos(2 * gamma) +
+      0.000907 * Math.sin(2 * gamma) -
+      0.002697 * Math.cos(3 * gamma) +
+      0.00148 * Math.sin(3 * gamma)
+    );
+
+    const minutesUTC = date.getUTCHours() * 60 + date.getUTCMinutes() + date.getUTCSeconds() / 60;
+    const trueSolarMinutes = ((minutesUTC + eqTime + 4 * LIGHTING_LOCATION.longitude) % 1440 + 1440) % 1440;
+    let hourAngle = trueSolarMinutes / 4 - 180;
+    if (hourAngle < -180) hourAngle += 360;
+
+    const lat = LIGHTING_LOCATION.latitude * Math.PI / 180;
+    const ha = hourAngle * Math.PI / 180;
+    const cosZenith = Math.sin(lat) * Math.sin(decl) +
+      Math.cos(lat) * Math.cos(decl) * Math.cos(ha);
+    const zenith = Math.acos(Math.max(-1, Math.min(1, cosZenith)));
+    return 90 - zenith * 180 / Math.PI;
+  }
+
+  function refineSolarCrossing(a, b, rising) {
+    const target = -0.833; // Atmospheric refraction + solar-disk correction.
+    for (let i = 0; i < 20; i++) {
+      const mid = new Date((a.getTime() + b.getTime()) / 2);
+      const fa = solarPosition(a) - target;
+      const fm = solarPosition(mid) - target;
+      if (rising ? fa <= 0 && fm > 0 : fa > 0 && fm <= 0) b = mid;
+      else a = mid;
+    }
+    return new Date((a.getTime() + b.getTime()) / 2);
+  }
+
+  function findSolarEvents(now) {
+    const start = new Date(now.getTime() - 36 * 3600000);
+    const end = new Date(now.getTime() + 36 * 3600000);
+    const step = 5 * 60000;
+    let previous = new Date(start);
+    let previousAltitude = solarPosition(previous);
+    const sunrises = [];
+    const sunsets = [];
+
+    for (let t = start.getTime() + step; t <= end.getTime(); t += step) {
+      const current = new Date(t);
+      const altitude = solarPosition(current);
+
+      if (previousAltitude <= -0.833 && altitude > -0.833) {
+        sunrises.push(refineSolarCrossing(previous, current, true));
+      }
+      if (previousAltitude > -0.833 && altitude <= -0.833) {
+        sunsets.push(refineSolarCrossing(previous, current, false));
+      }
+
+      previous = current;
+      previousAltitude = altitude;
+    }
+
+    const futureSunrises = sunrises.filter(d => d > now).sort((a, b) => a - b);
+    const futureSunsets = sunsets.filter(d => d > now).sort((a, b) => a - b);
+    const previousSunrises = sunrises.filter(d => d <= now).sort((a, b) => b - a);
+    const previousSunsets = sunsets.filter(d => d <= now).sort((a, b) => b - a);
+
+    return {
+      sunrise: futureSunrises[0] || null,
+      sunset: futureSunsets[0] || null,
+      previousSunrise: previousSunrises[0] || null,
+      previousSunset: previousSunsets[0] || null
+    };
+  }
+
+  function formatEasternTime(date) {
+    return new Intl.DateTimeFormat("en-US", {
+      timeZone: LIGHTING_LOCATION.timeZone,
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true
+    }).format(date);
+  }
+
+  function formatEasternDateTime(date) {
+    return new Intl.DateTimeFormat("en-US", {
+      timeZone: LIGHTING_LOCATION.timeZone,
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true
+    }).format(date);
+  }
+
+  function formatOffsetTime(date, minutes) {
+    return formatEasternTime(new Date(date.getTime() + minutes * 60000));
+  }
+
+  function updateLightingReference() {
+    if (!lightingStatus) return;
+
+    const now = new Date();
+    const events = findSolarEvents(now);
+    if (!events.sunrise || !events.sunset) {
+      lightingStatus.textContent = "Solar data unavailable";
+      return;
+    }
+
+    const legalNightStart = new Date(events.sunset.getTime() + LEGAL_LIGHTING_MINUTES * 60000);
+    const operationalNightStart = new Date(events.sunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000);
+    const legalNightEnd = new Date(events.sunrise.getTime() - LEGAL_LIGHTING_MINUTES * 60000);
+    const operationalNightEnd = new Date(events.sunrise.getTime() - OPERATIONAL_LIGHTING_MINUTES * 60000);
+
+    // The operational indicator uses the legal 30-minute period plus a 3-minute
+    // safety buffer, so the displayed enforcement window is 33 minutes.
+    const currentOperationalNight =
+      (events.previousSunset &&
+       now >= new Date(events.previousSunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000)) ||
+      now < operationalNightEnd;
+
+    nextSunset.textContent = formatEasternDateTime(events.sunset);
+    nextSunrise.textContent = formatEasternDateTime(events.sunrise);
+    sunsetCutoff.textContent = "Legal: " + formatEasternTime(legalNightStart) +
+      " · Safety: " + formatEasternTime(operationalNightStart);
+    sunriseCutoff.textContent = "Legal: " + formatEasternTime(legalNightEnd) +
+      " · Safety: " + formatEasternTime(operationalNightEnd);
+
+    if (currentOperationalNight) {
+      lightingStatus.textContent = "NIGHTTIME — 33-MINUTE SAFETY WINDOW ACTIVE";
+      lightingStatus.className = "lighting-status night";
+    } else {
+      lightingStatus.textContent = "DAYTIME — NIGHTTIME PERIOD NOT YET ACTIVE";
+      lightingStatus.className = "lighting-status day";
+    }
+
+    lightingUpdated.textContent = "Updated " + formatEasternTime(now);
+  }
+
+
   function startOfDay(d) { const x = new Date(d); x.setHours(0,0,0,0); return x; }
   function addDays(d, n) { const x = new Date(d); x.setDate(x.getDate() + n); return x; }
   function formatDate(d) { return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" }); }
@@ -315,5 +485,7 @@
     footerMeta.textContent = "Multi-county Troop B. Source dates shown per area. Holidays/exclusions applied." +
       (about.lastUpdated ? " Updated " + about.lastUpdated + "." : "");
   }
+  updateLightingReference();
+  setInterval(updateLightingReference, 60000);
   init();
 })();

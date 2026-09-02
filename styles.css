@@ -388,3 +388,94 @@ header h1 {
   color: var(--text);
   opacity: 1;
 }
+
+/* ---------- Live nighttime-lighting reference ---------- */
+.lighting-card {
+  padding: 11px 14px 12px;
+}
+
+.lighting-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+
+.lighting-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.lighting-updated {
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.lighting-status {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 8px;
+  margin-bottom: 9px;
+}
+
+.lighting-status.night {
+  color: var(--success);
+  background: var(--success-bg);
+  border: 1px solid var(--success);
+}
+
+.lighting-status.day {
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.lighting-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.lighting-grid > div {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 8px;
+  text-align: center;
+}
+
+.lighting-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.lighting-grid strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.lighting-grid small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.67rem;
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+.lighting-note {
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 8px;
+}
