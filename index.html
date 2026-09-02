@@ -22,28 +22,12 @@
 
     <div class="today" id="todayLabel"></div>
 
-    <!-- Live NYS nighttime-lighting reference for St. Lawrence County -->
-    <section class="card lighting-card" id="lightingCard" aria-live="polite">
-      <div class="lighting-header">
-        <span class="lighting-title">NIGHTTIME LIGHTING REFERENCE</span>
-        <span class="lighting-updated" id="lightingUpdated">Updating…</span>
-      </div>
-      <div class="lighting-status" id="lightingStatus">Calculating…</div>
-      <div class="lighting-grid">
-        <div>
-          <span class="lighting-label">Next sunset</span>
-          <strong id="nextSunset">—</strong>
-          <small id="sunsetCutoff">—</small>
-        </div>
-        <div>
-          <span class="lighting-label">Next sunrise</span>
-          <strong id="nextSunrise">—</strong>
-          <small id="sunriseCutoff">—</small>
-        </div>
-      </div>
-      <div class="lighting-note" id="lightingNote">
-        Legal nighttime period: 30 min after sunset through 30 min before sunrise.
-        Display adds a 3-minute operational safety buffer on each side (33 min).
+    <!-- Compact live lighting reference -->
+    <section class="lighting-card" id="lightingCard" aria-live="polite">
+      <div class="lighting-status" id="lightingStatus">LIGHTING: CALCULATING…</div>
+      <div class="lighting-times">
+        <span>Sunset <strong id="nextSunset">—</strong></span>
+        <span>Sunrise <strong id="nextSunrise">—</strong></span>
       </div>
     </section>
 

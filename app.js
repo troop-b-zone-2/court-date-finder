@@ -27,7 +27,7 @@
     timeZone: "America/New_York"
   };
   const LEGAL_LIGHTING_MINUTES = 30;
-  const SAFETY_BUFFER_MINUTES = 3;
+  const SAFETY_BUFFER_MINUTES = 2;
   const OPERATIONAL_LIGHTING_MINUTES = LEGAL_LIGHTING_MINUTES + SAFETY_BUFFER_MINUTES;
 
   const lightingStatus = document.getElementById("lightingStatus");
@@ -154,40 +154,35 @@
     const now = new Date();
     const events = findSolarEvents(now);
     if (!events.sunrise || !events.sunset) {
-      lightingStatus.textContent = "Solar data unavailable";
+      lightingStatus.textContent = "LIGHTING: UNAVAILABLE";
       return;
     }
 
-    const legalNightStart = new Date(events.sunset.getTime() + LEGAL_LIGHTING_MINUTES * 60000);
-    const operationalNightStart = new Date(events.sunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000);
-    const legalNightEnd = new Date(events.sunrise.getTime() - LEGAL_LIGHTING_MINUTES * 60000);
-    const operationalNightEnd = new Date(events.sunrise.getTime() - OPERATIONAL_LIGHTING_MINUTES * 60000);
+    // Legal nighttime period is 30 minutes after sunset through 30 minutes
+    // before sunrise. The display adds a 2-minute safety buffer on each side.
+    const operationalNightStart = new Date(
+      events.sunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000
+    );
+    const operationalNightEnd = new Date(
+      events.sunrise.getTime() - OPERATIONAL_LIGHTING_MINUTES * 60000
+    );
 
-    // The operational indicator uses the legal 30-minute period plus a 3-minute
-    // safety buffer, so the displayed enforcement window is 33 minutes.
     const currentOperationalNight =
       (events.previousSunset &&
-       now >= new Date(events.previousSunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000)) ||
-      now < operationalNightEnd;
+        now >= new Date(events.previousSunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000)) ||
+      (events.previousSunrise && now < new Date(events.previousSunrise.getTime() - OPERATIONAL_LIGHTING_MINUTES * 60000));
 
-    nextSunset.textContent = formatEasternDateTime(events.sunset);
-    nextSunrise.textContent = formatEasternDateTime(events.sunrise);
-    sunsetCutoff.textContent = "Legal: " + formatEasternTime(legalNightStart) +
-      " · Safety: " + formatEasternTime(operationalNightStart);
-    sunriseCutoff.textContent = "Legal: " + formatEasternTime(legalNightEnd) +
-      " · Safety: " + formatEasternTime(operationalNightEnd);
+    nextSunset.textContent = formatEasternTime(events.sunset);
+    nextSunrise.textContent = formatEasternTime(events.sunrise);
 
     if (currentOperationalNight) {
-      lightingStatus.textContent = "NIGHTTIME — 33-MINUTE SAFETY WINDOW ACTIVE";
+      lightingStatus.textContent = "LIGHTING: SAFE TO WRITE TICKETS";
       lightingStatus.className = "lighting-status night";
     } else {
-      lightingStatus.textContent = "DAYTIME — NIGHTTIME PERIOD NOT YET ACTIVE";
+      lightingStatus.textContent = "LIGHTING: DAYTIME";
       lightingStatus.className = "lighting-status day";
     }
-
-    lightingUpdated.textContent = "Updated " + formatEasternTime(now);
   }
-
 
   function startOfDay(d) { const x = new Date(d); x.setHours(0,0,0,0); return x; }
   function addDays(d, n) { const x = new Date(d); x.setDate(x.getDate() + n); return x; }
