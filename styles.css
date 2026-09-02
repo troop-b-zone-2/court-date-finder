@@ -395,9 +395,9 @@ header h1 {
   top: 14px;
   left: 14px;
   z-index: 20;
-  width: max-content;
-  max-width: calc(100vw - 28px);
-  padding: 7px 9px;
+  width: min(220px, calc(100vw - 28px));
+  box-sizing: border-box;
+  padding: 8px 10px;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--card);
@@ -405,16 +405,16 @@ header h1 {
 }
 
 .lighting-status {
-  display: none;
+  display: block;
   width: 100%;
+  box-sizing: border-box;
   font-size: 0.72rem;
-  line-height: 1.2;
   font-weight: 750;
   letter-spacing: .03em;
   text-align: center;
-  padding: 3px 5px;
+  padding: 4px 5px;
   border-radius: 5px;
-  margin-bottom: 5px;
+  margin: 0 0 6px;
 }
 
 .lighting-status.night {
@@ -425,13 +425,18 @@ header h1 {
 
 .lighting-times {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
   color: var(--muted);
   font-size: 0.67rem;
-  line-height: 1.2;
+}
+
+.lighting-times span {
   white-space: nowrap;
+  min-width: 0;
 }
 
 .lighting-times strong {
@@ -445,9 +450,9 @@ header h1 {
   .lighting-card {
     position: static;
     width: 100%;
-    max-width: none;
+    max-width: 100%;
     margin: 0 0 10px;
-    padding: 7px 9px;
     box-shadow: none;
   }
 }
+
