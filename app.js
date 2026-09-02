@@ -154,21 +154,25 @@
     const now = new Date();
     const events = findSolarEvents(now);
     if (!events.sunrise || !events.sunset) {
-      lightingStatus.hidden = true;
+      lightingStatus.style.display = "none";
       return;
     }
 
-    // Legal nighttime period is 30 minutes after sunset through 30 minutes
-    // before sunrise. The display adds a 2-minute safety buffer on each side.
-    const currentOperationalNight =
-      (events.previousSunset &&
-        now >= new Date(events.previousSunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000)) ||
-      (events.previousSunrise && now < new Date(events.previousSunrise.getTime() - OPERATIONAL_LIGHTING_MINUTES * 60000));
+    // NYS nighttime period: 30 minutes after sunset through 30 minutes
+    // before sunrise. Keep an additional 2-minute safety buffer, so the
+    // indicator appears at +32 minutes after sunset and remains until
+    // -32 minutes before sunrise.
+    const afterSunset = events.previousSunset
+      ? now.getTime() >= events.previousSunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000
+      : false;
+    const beforeSunrise = events.previousSunrise
+      ? now.getTime() < events.previousSunrise.getTime() - OPERATIONAL_LIGHTING_MINUTES * 60000
+      : false;
 
     nextSunset.textContent = formatEasternTime(events.sunset);
     nextSunrise.textContent = formatEasternTime(events.sunrise);
 
-    lightingStatus.hidden = !currentOperationalNight;
+    lightingStatus.style.display = (afterSunset || beforeSunrise) ? "block" : "none";
     lightingStatus.textContent = "LIGHTS ✓";
     lightingStatus.className = "lighting-status night";
   }
