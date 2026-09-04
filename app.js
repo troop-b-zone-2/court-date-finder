@@ -33,9 +33,6 @@
   const lightingStatus = document.getElementById("lightingStatus");
   const nextSunset = document.getElementById("nextSunset");
   const nextSunrise = document.getElementById("nextSunrise");
-  const sunsetCutoff = document.getElementById("sunsetCutoff");
-  const sunriseCutoff = document.getElementById("sunriseCutoff");
-  const lightingUpdated = document.getElementById("lightingUpdated");
 
   function solarPosition(date) {
     // NOAA solar-position approximation; returns solar altitude in degrees.
@@ -148,36 +145,57 @@
     return formatEasternTime(new Date(date.getTime() + minutes * 60000));
   }
 
+  function isOperationalNight(now, events) {
+    // Legal lighting period: 30 min after sunset through 30 min before sunrise.
+    // Operational window adds a 2-minute safety buffer on each side (32 min total).
+    // LIGHTS ✓ means light violations can be written.
+    if (!events.previousSunset) return false;
+
+    const opMs = OPERATIONAL_LIGHTING_MINUTES * 60000;
+    const t = now.getTime();
+    const start = events.previousSunset.getTime() + opMs;
+    let end = null;
+
+    // Still before today's sunrise: night ends at previous sunrise − buffer
+    if (events.previousSunrise && events.previousSunrise > events.previousSunset) {
+      end = events.previousSunrise.getTime() - opMs;
+    } else if (
+      events.sunrise &&
+      events.sunrise > events.previousSunset &&
+      (!events.previousSunrise || events.previousSunset > events.previousSunrise)
+    ) {
+      // Evening / overnight after today's sunset: night ends at next sunrise − buffer
+      end = events.sunrise.getTime() - opMs;
+    }
+
+    return end !== null && t >= start && t < end;
+  }
+
   function updateLightingReference() {
     if (!lightingStatus) return;
 
     const now = new Date();
     const events = findSolarEvents(now);
-    if (!events.sunrise || !events.sunset) {
-      lightingStatus.hidden = true;
-      return;
+
+    if (nextSunset) {
+      nextSunset.textContent = events.sunset
+        ? formatEasternTime(events.sunset)
+        : "—";
+    }
+    if (nextSunrise) {
+      nextSunrise.textContent = events.sunrise
+        ? formatEasternTime(events.sunrise)
+        : "—";
     }
 
-    // Legal nighttime period is 30 minutes after sunset through 30 minutes
-    // before sunrise. The display adds a 2-minute safety buffer on each side.
-    const nightStarts = events.previousSunset
-      ? new Date(events.previousSunset.getTime() + OPERATIONAL_LIGHTING_MINUTES * 60000)
-      : null;
-    const nightEnds = events.sunrise
-      ? new Date(events.sunrise.getTime() - OPERATIONAL_LIGHTING_MINUTES * 60000)
-      : null;
-
-    // Show LIGHTS only during the overnight window: after the sunset cutoff
-    // and before the following sunrise cutoff.
-    const currentOperationalNight =
-      !!nightStarts && !!nightEnds && now >= nightStarts && now < nightEnds;
-
-    nextSunset.textContent = formatEasternTime(events.sunset);
-    nextSunrise.textContent = formatEasternTime(events.sunrise);
-
+    const currentOperationalNight = isOperationalNight(now, events);
     lightingStatus.hidden = !currentOperationalNight;
-    lightingStatus.textContent = "LIGHTS ✓";
-    lightingStatus.className = "lighting-status night";
+    if (currentOperationalNight) {
+      lightingStatus.textContent = "LIGHTS ✓";
+      lightingStatus.className = "lighting-status night";
+      lightingStatus.title =
+        "Operational lighting hours (30 min after sunset / before sunrise + 2 min buffer). Light violations may be written.";
+    }
   }
 
   function startOfDay(d) { const x = new Date(d); x.setHours(0,0,0,0); return x; }
