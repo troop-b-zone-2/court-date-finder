@@ -146,29 +146,39 @@
   }
 
   function isOperationalNight(now, events) {
-    // Legal lighting period: 30 min after sunset through 30 min before sunrise.
-    // Operational window adds a 2-minute safety buffer on each side (32 min total).
-    // LIGHTS ✓ means light violations can be written.
-    if (!events.previousSunset) return false;
-
+    // Show LIGHTS only when it is currently legal+buffer nighttime for light tickets:
+    //   from (sunset + 32 min) through (sunrise − 32 min).
+    // 30 min = legal; +2 min safety buffer on each side.
     const opMs = OPERATIONAL_LIGHTING_MINUTES * 60000;
     const t = now.getTime();
-    const start = events.previousSunset.getTime() + opMs;
-    let end = null;
 
-    // Still before today's sunrise: night ends at previous sunrise − buffer
-    if (events.previousSunrise && events.previousSunrise > events.previousSunset) {
-      end = events.previousSunrise.getTime() - opMs;
-    } else if (
-      events.sunrise &&
-      events.sunrise > events.previousSunset &&
-      (!events.previousSunrise || events.previousSunset > events.previousSunrise)
+    // Window A — still before sunrise this morning:
+    // previousSunset (last night) → previousSunrise (this morning)
+    if (
+      events.previousSunset &&
+      events.previousSunrise &&
+      events.previousSunrise.getTime() > events.previousSunset.getTime()
     ) {
-      // Evening / overnight after today's sunset: night ends at next sunrise − buffer
-      end = events.sunrise.getTime() - opMs;
+      const start = events.previousSunset.getTime() + opMs;
+      const end = events.previousSunrise.getTime() - opMs;
+      if (t >= start && t < end) return true;
     }
 
-    return end !== null && t >= start && t < end;
+    // Window B — after sunset this evening:
+    // previousSunset (tonight) → next sunrise (tomorrow)
+    // Only when the most recent sunset is after the most recent sunrise (i.e. evening).
+    if (
+      events.previousSunset &&
+      events.sunrise &&
+      events.previousSunrise &&
+      events.previousSunset.getTime() > events.previousSunrise.getTime()
+    ) {
+      const start = events.previousSunset.getTime() + opMs;
+      const end = events.sunrise.getTime() - opMs;
+      if (t >= start && t < end) return true;
+    }
+
+    return false;
   }
 
   function updateLightingReference() {
@@ -188,13 +198,22 @@
         : "—";
     }
 
-    const currentOperationalNight = isOperationalNight(now, events);
-    lightingStatus.hidden = !currentOperationalNight;
-    if (currentOperationalNight) {
+    const showLights = isOperationalNight(now, events);
+
+    // Always force the badge fully off during daytime (do not leave stale text/classes).
+    if (showLights) {
+      lightingStatus.hidden = false;
+      lightingStatus.style.display = "";
       lightingStatus.textContent = "LIGHTS ✓";
       lightingStatus.className = "lighting-status night";
       lightingStatus.title =
-        "Operational lighting hours (30 min after sunset / before sunrise + 2 min buffer). Light violations may be written.";
+        "32 min after sunset through 32 min before sunrise — light violations may be written.";
+    } else {
+      lightingStatus.hidden = true;
+      lightingStatus.style.display = "none";
+      lightingStatus.textContent = "";
+      lightingStatus.className = "lighting-status";
+      lightingStatus.removeAttribute("title");
     }
   }
 
