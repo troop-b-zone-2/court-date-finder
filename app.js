@@ -199,21 +199,28 @@
     }
 
     const showLights = isOperationalNight(now, events);
+    const tip =
+      "Light violations OK — 32 min after sunset through 32 min before sunrise";
 
-    // Always force the badge fully off during daytime (do not leave stale text/classes).
+    // Icon only; meaning is on hover (title) / screen reader (aria-label).
+    // Always force fully off during daytime so nothing stale remains.
     if (showLights) {
       lightingStatus.hidden = false;
       lightingStatus.style.display = "";
-      lightingStatus.textContent = "LIGHTS ✓";
       lightingStatus.className = "lighting-status night";
-      lightingStatus.title =
-        "32 min after sunset through 32 min before sunrise — light violations may be written.";
+      lightingStatus.title = tip;
+      lightingStatus.setAttribute("aria-label", tip);
+      lightingStatus.innerHTML =
+        '<svg class="lights-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+        '<path fill="currentColor" d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/>' +
+        "</svg>";
     } else {
       lightingStatus.hidden = true;
       lightingStatus.style.display = "none";
-      lightingStatus.textContent = "";
+      lightingStatus.innerHTML = "";
       lightingStatus.className = "lighting-status";
       lightingStatus.removeAttribute("title");
+      lightingStatus.removeAttribute("aria-label");
     }
   }
 

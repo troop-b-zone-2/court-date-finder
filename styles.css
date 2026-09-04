@@ -405,22 +405,27 @@ header h1 {
 }
 
 .lighting-status {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   box-sizing: border-box;
-  font-size: 0.72rem;
-  font-weight: 750;
-  letter-spacing: .03em;
   text-align: center;
-  padding: 4px 5px;
+  padding: 5px 6px;
   border-radius: 5px;
   margin: 0 0 6px;
+  cursor: help;
 }
 
 .lighting-status.night {
   color: var(--success);
   background: var(--success-bg);
   border: 1px solid var(--success);
+}
+
+.lighting-status .lights-icon {
+  display: block;
+  flex-shrink: 0;
 }
 
 .lighting-times {
